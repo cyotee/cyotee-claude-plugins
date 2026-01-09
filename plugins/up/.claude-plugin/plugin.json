@@ -1,0 +1,8 @@
+{
+  "name": "up",
+  "description": "Context bootstrap commands for CLAUDE.md, PROMPT.md, and UNIFIED_PLAN.md",
+  "version": "1.0.0",
+  "author": {
+    "name": "cyotee"
+  }
+}

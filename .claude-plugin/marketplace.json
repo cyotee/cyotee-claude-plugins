@@ -1,0 +1,43 @@
+{
+  "name": "cyotee",
+  "owner": {
+    "name": "cyotee"
+  },
+  "metadata": {
+    "description": "cyotee's development workflow commands for Claude Code",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "up",
+      "source": "./plugins/up",
+      "description": "Context bootstrap commands for CLAUDE.md, PROMPT.md, and UNIFIED_PLAN.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "design",
+      "source": "./plugins/design",
+      "description": "Interactive design sessions for defining tasks and user stories",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "planning"
+    },
+    {
+      "name": "backlog",
+      "source": "./plugins/backlog",
+      "description": "Manage UNIFIED_PLAN.md tasks - status, prune, launch worktrees",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "productivity"
+    }
+  ]
+}
