@@ -10,7 +10,10 @@
   "plugins": [
     {
       "name": "up",
-      "source": "cyotee/cyotee-claude-plugin-up",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/cyotee-claude-plugin-up"
+      },
       "description": "Context bootstrap commands for CLAUDE.md, PROMPT.md, and UNIFIED_PLAN.md",
       "version": "1.0.0",
       "author": {
@@ -21,7 +24,10 @@
     },
     {
       "name": "design",
-      "source": "cyotee/cyotee-claude-plugin-design",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/cyotee-claude-plugin-design"
+      },
       "description": "Interactive design sessions for defining tasks and user stories",
       "version": "1.0.0",
       "author": {
@@ -32,7 +38,10 @@
     },
     {
       "name": "backlog",
-      "source": "cyotee/cyotee-claude-plugin-backlog",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/cyotee-claude-plugin-backlog"
+      },
       "description": "Manage UNIFIED_PLAN.md tasks - status, prune, launch worktrees",
       "version": "1.0.0",
       "author": {
