@@ -1,66 +1,121 @@
 # cyotee-claude-plugins
 
-Development workflow commands for Claude Code.
+A Claude Code plugin marketplace providing development workflow commands for managing complex projects with UNIFIED_PLAN.md task backlogs, git worktrees, and autonomous agent execution.
 
 ## Installation
 
 ```bash
-# Add this marketplace
+# Add this marketplace (one-time)
 /plugin marketplace add cyotee/cyotee-claude-plugins
 
-# Install plugins
+# Install individual plugins
 /plugin install up@cyotee
 /plugin install design@cyotee
 /plugin install backlog@cyotee
 
-# Or browse all available
-/plugin browse cyotee
+# Or browse available plugins
+/plugin
 ```
 
-## Available Plugins
+## Plugins
 
-### up
+### up - Context Bootstrap
 
-Context bootstrap commands for reading project documentation.
-
-| Command | Description |
-|---------|-------------|
-| `/up` | Bootstrap with CLAUDE.md |
-| `/up:prompt` | Bootstrap with CLAUDE.md + PROMPT.md (for agent worktrees) |
-| `/up:plan` | Bootstrap with CLAUDE.md + UNIFIED_PLAN.md (for task overview) |
-
-### design
-
-Interactive design sessions for defining tasks and user stories.
+Commands for loading project context from documentation files.
 
 | Command | Description |
 |---------|-------------|
-| `/design` | Design a new feature/task (same as /design:task) |
-| `/design:task <feature>` | Interactive design session to create task in UNIFIED_PLAN.md |
-| `/design:review [<N>]` | Review all tasks or a specific task |
+| `/up` | Read CLAUDE.md and referenced documentation to understand the codebase |
+| `/up:plan` | Read CLAUDE.md + UNIFIED_PLAN.md to see project context and task status |
+| `/up:prompt` | Read CLAUDE.md + PROMPT.md for agent worktree execution |
 
-### backlog
+### design - Task Design
 
-Manage UNIFIED_PLAN.md tasks.
+Interactive design sessions for creating and refining tasks with user stories.
 
 | Command | Description |
 |---------|-------------|
-| `/backlog` | Show task status (or report no backlog defined) |
-| `/backlog:status` | Show task status table |
-| `/backlog:prune` | Archive completed tasks |
-| `/backlog:launch <N>` | Launch agent worktree for task N |
+| `/design <feature>` | Start interactive design session to create a new task |
+| `/design:task <feature>` | Same as `/design` - create task in UNIFIED_PLAN.md |
+| `/design:review` | Review all tasks for completeness and quality |
+| `/design:review <N>` | Review and refine a specific task |
+
+### backlog - Task Management
+
+Manage your UNIFIED_PLAN.md task backlog and git worktrees.
+
+| Command | Description |
+|---------|-------------|
+| `/backlog` | Display task status summary table |
+| `/backlog:status` | Same as `/backlog` - show all tasks |
+| `/backlog:launch <N>` | Create git worktree and PROMPT.md for task N |
+| `/backlog:complete [N]` | Rebase, merge to main, and prepare worktree cleanup |
+| `/backlog:prune` | Archive completed tasks from UNIFIED_PLAN.md |
 
 ## Workflow
 
-1. **Start a project:** `/up` to load context
-2. **Design features:** `/design <feature-name>` to create tasks
-3. **Check status:** `/backlog` to see all tasks
-4. **Launch agents:** `/backlog:launch 3` to start work on task 3
-5. **Review progress:** `/design:review` to refine tasks
+These plugins support a structured development workflow:
+
+```
+1. /up                    # Load project context
+2. /design <feature>      # Design a new feature with user stories
+3. /backlog               # View all tasks
+4. /backlog:launch 5      # Create worktree for task 5
+5. (work in worktree)     # Agent executes task
+6. /backlog:complete 5    # Merge completed work
+7. /backlog:prune         # Archive completed tasks
+```
+
+### Agent Worktree Execution
+
+For autonomous agent execution in worktrees:
+
+```bash
+# After /backlog:launch creates the worktree
+cd <worktree-path>
+claude --dangerously-skip-permissions
+
+# In Claude, start the agent loop
+/ralph-loop:ralph-loop "Read PROMPT.md and execute the task." --completion-promise "TASK_COMPLETE"
+```
 
 ## Related Files
 
-These commands work with:
-- `CLAUDE.md` - Project documentation and conventions
-- `UNIFIED_PLAN.md` - Task backlog with user stories
-- `PROMPT.md` - Agent task instructions (in worktrees)
+These commands work with standard project files:
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Project documentation, architecture, and conventions |
+| `UNIFIED_PLAN.md` | Task backlog with user stories and completion criteria |
+| `PROMPT.md` | Agent task instructions (created in worktrees by `/backlog:launch`) |
+
+## Task Lifecycle
+
+```
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  /design        │ ──▶ │  UNIFIED_PLAN.md │ ──▶ │  Ready for      │
+│  <feature>      │     │  Task Created    │     │  Agent          │
+└─────────────────┘     └──────────────────┘     └────────┬────────┘
+                                                          │
+                                                          ▼
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  /backlog:      │ ◀── │  Agent Working   │ ◀── │  /backlog:      │
+│  complete       │     │  in Worktree     │     │  launch <N>     │
+└────────┬────────┘     └──────────────────┘     └─────────────────┘
+         │
+         ▼
+┌─────────────────┐     ┌──────────────────┐
+│  /backlog:      │ ──▶ │  Archived        │
+│  prune          │     │                  │
+└─────────────────┘     └──────────────────┘
+```
+
+## Requirements
+
+- **git-wt**: Git worktree helper (for `/backlog:launch`)
+- **CLAUDE.md**: Project documentation file
+- **UNIFIED_PLAN.md**: Task backlog (created by `/design` if missing)
+
+## License
+
+MIT
