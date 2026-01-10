@@ -1,0 +1,9 @@
+[submodule "plugins/backlog"]
+	path = plugins/backlog
+	url = https://github.com/cyotee/cyotee-claude-plugin-backlog.git
+[submodule "plugins/design"]
+	path = plugins/design
+	url = https://github.com/cyotee/cyotee-claude-plugin-design.git
+[submodule "plugins/up"]
+	path = plugins/up
+	url = https://github.com/cyotee/cyotee-claude-plugin-up.git
