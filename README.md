@@ -1,6 +1,6 @@
 # cyotee-claude-plugins
 
-A Claude Code plugin marketplace providing development workflow commands for managing complex projects with UNIFIED_PLAN.md task backlogs, git worktrees, and autonomous agent execution.
+A Claude Code plugin marketplace providing development workflow commands for managing complex projects with directory-based task management, git worktrees, and autonomous agent execution.
 
 ## Installation
 
@@ -26,7 +26,8 @@ Commands for loading project context from documentation files.
 | Command | Description |
 |---------|-------------|
 | `/up` | Read CLAUDE.md and referenced documentation to understand the codebase |
-| `/up:plan` | Read CLAUDE.md + UNIFIED_PLAN.md to see project context and task status |
+| `/up:plan` | Read CLAUDE.md + PRD.md for project requirements and task overview |
+| `/up:prd` | Alias for `/up:plan` |
 | `/up:prompt` | Read CLAUDE.md + PROMPT.md for agent worktree execution |
 
 ### design - Task Design
@@ -36,21 +37,36 @@ Interactive design sessions for creating and refining tasks with user stories.
 | Command | Description |
 |---------|-------------|
 | `/design <feature>` | Start interactive design session to create a new task |
-| `/design:task <feature>` | Same as `/design` - create task in UNIFIED_PLAN.md |
+| `/design:task <feature>` | Same as `/design` - create task in tasks/ directory |
+| `/design:init` | Initialize tasks/ directory structure in a repository |
+| `/design:prd` | Interactive PRD creation for project-level requirements |
 | `/design:review` | Review all tasks for completeness and quality |
 | `/design:review <N>` | Review and refine a specific task |
 
 ### backlog - Task Management
 
-Manage your UNIFIED_PLAN.md task backlog and git worktrees.
+Manage your tasks/ directory backlog and git worktrees.
 
 | Command | Description |
 |---------|-------------|
 | `/backlog` | Display task status summary table |
 | `/backlog:status` | Same as `/backlog` - show all tasks |
-| `/backlog:launch <N>` | Create git worktree and PROMPT.md for task N |
-| `/backlog:complete [N]` | Rebase, merge to main, and prepare worktree cleanup |
-| `/backlog:prune` | Archive completed tasks from UNIFIED_PLAN.md |
+| `/backlog:read <ID>` | View detailed task information (PRD, progress, review) |
+| `/backlog:launch <ID>` | Create git worktree and launch agent for task |
+| `/backlog:complete [ID]` | Rebase, merge to main, and prepare for review |
+| `/backlog:prune [ID]` | Archive completed/reviewed tasks |
+
+## Task ID Format
+
+Tasks use layer-prefixed IDs for multi-project support:
+
+| Prefix | Layer | Tasks Directory |
+|--------|-------|-----------------|
+| I | IndexedEx | `tasks/` |
+| D | daosys | `lib/daosys/tasks/` |
+| C | Crane | `lib/daosys/lib/crane/tasks/` |
+
+Examples: `I-5`, `D-3`, `C-1`
 
 ## Workflow
 
@@ -58,12 +74,13 @@ These plugins support a structured development workflow:
 
 ```
 1. /up                    # Load project context
-2. /design <feature>      # Design a new feature with user stories
-3. /backlog               # View all tasks
-4. /backlog:launch 5      # Create worktree for task 5
-5. (work in worktree)     # Agent executes task
-6. /backlog:complete 5    # Merge completed work
-7. /backlog:prune         # Archive completed tasks
+2. /design:init           # Create tasks/ structure (first time)
+3. /design <feature>      # Design a new feature with user stories
+4. /backlog               # View all tasks
+5. /backlog:launch I-5    # Create worktree for task I-5
+6. (work in worktree)     # Agent executes task
+7. /backlog:complete I-5  # Rebase and request review
+8. /backlog:prune I-5     # Archive after review passes
 ```
 
 ### Agent Worktree Execution
@@ -79,42 +96,77 @@ claude --dangerously-skip-permissions
 /ralph-loop:ralph-loop "Read PROMPT.md and execute the task." --completion-promise "TASK_COMPLETE"
 ```
 
-## Related Files
+## Task Directory Structure
 
-These commands work with standard project files:
+Each task is a directory containing:
+
+```
+tasks/
+├── I-1/
+│   ├── PRD.md        # Requirements and acceptance criteria
+│   ├── PROGRESS.md   # Reverse-chronological progress log
+│   └── REVIEW.md     # Review findings and verdict
+├── I-2/
+│   └── ...
+├── archive/          # Completed tasks moved here
+└── INDEX.md          # Task index with status overview
+```
+
+## Related Files
 
 | File | Purpose |
 |------|---------|
 | `CLAUDE.md` | Project documentation, architecture, and conventions |
-| `UNIFIED_PLAN.md` | Task backlog with user stories and completion criteria |
-| `PROMPT.md` | Agent task instructions (created in worktrees by `/backlog:launch`) |
+| `PRD.md` | Global product requirements document |
+| `tasks/INDEX.md` | Task index with status table |
+| `tasks/[ID]/PRD.md` | Task-specific requirements and acceptance criteria |
+| `tasks/[ID]/PROGRESS.md` | Agent progress log (reverse chronological) |
+| `tasks/[ID]/REVIEW.md` | Review findings and verdict |
+| `PROMPT.md` | Agent task instructions (created in worktrees) |
 
 ## Task Lifecycle
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  /design        │ ──▶ │  UNIFIED_PLAN.md │ ──▶ │  Ready for      │
-│  <feature>      │     │  Task Created    │     │  Agent          │
+│  /design        │ ──▶ │  tasks/[ID]/     │ ──▶ │  🆕 pending     │
+│  <feature>      │     │  PRD.md created  │     │                 │
 └─────────────────┘     └──────────────────┘     └────────┬────────┘
                                                           │
-                                                          ▼
+                        ┌──────────────────┐              ▼
+                        │  Agent Working   │     ┌─────────────────┐
+                        │  in Worktree     │ ◀── │  /backlog:      │
+                        │  🚀 in_progress  │     │  launch <ID>    │
+                        └────────┬─────────┘     └─────────────────┘
+                                 │
+                                 ▼
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  /backlog:      │ ◀── │  Agent Working   │ ◀── │  /backlog:      │
-│  complete       │     │  in Worktree     │     │  launch <N>     │
+│  Different      │ ◀── │  /backlog:       │ ◀── │  🚀 in_progress │
+│  Agent Reviews  │     │  complete <ID>   │     │  Work done      │
+│  📋 review      │     │  📋 review       │     │                 │
 └────────┬────────┘     └──────────────────┘     └─────────────────┘
          │
          ▼
 ┌─────────────────┐     ┌──────────────────┐
-│  /backlog:      │ ──▶ │  Archived        │
-│  prune          │     │                  │
+│  /backlog:      │ ──▶ │  tasks/archive/  │
+│  prune <ID>     │     │  ✅ complete     │
 └─────────────────┘     └──────────────────┘
 ```
 
+## Task States
+
+| State | Icon | Description |
+|-------|------|-------------|
+| pending | 🆕 | Ready to start, dependencies met |
+| in_progress | 🚀 | Agent actively working |
+| review | 📋 | Work complete, awaiting review |
+| complete | ✅ | Reviewed and approved |
+| blocked | ❌ | Waiting on dependencies |
+
 ## Requirements
 
-- **git-wt**: Git worktree helper (for `/backlog:launch`)
+- **git-wt** or **wt-create.sh**: Git worktree helper (for `/backlog:launch`)
 - **CLAUDE.md**: Project documentation file
-- **UNIFIED_PLAN.md**: Task backlog (created by `/design` if missing)
+- **tasks/**: Task directory (created by `/design:init` if missing)
 
 ## License
 
