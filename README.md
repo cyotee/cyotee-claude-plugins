@@ -58,15 +58,14 @@ Manage your tasks/ directory backlog and git worktrees.
 
 ## Task ID Format
 
-Tasks use layer-prefixed IDs for multi-project support:
+Tasks use layer-prefixed IDs. Layers are detected dynamically:
 
-| Prefix | Layer | Tasks Directory |
-|--------|-------|-----------------|
-| I | IndexedEx | `tasks/` |
-| D | daosys | `lib/daosys/tasks/` |
-| C | Crane | `lib/daosys/lib/crane/tasks/` |
+1. Scan for `tasks/` directories in the repository
+2. Read `tasks/INDEX.md` for layer name and prefix
+3. If not found, auto-detect from directory/repo name
+4. Prefix is first letter of layer name (uppercase)
 
-Examples: `I-5`, `D-3`, `C-1`
+Examples: `P-5`, `M-3`, `L-1` (prefixes depend on your project names)
 
 ## Workflow
 
@@ -77,10 +76,10 @@ These plugins support a structured development workflow:
 2. /design:init           # Create tasks/ structure (first time)
 3. /design <feature>      # Design a new feature with user stories
 4. /backlog               # View all tasks
-5. /backlog:launch I-5    # Create worktree for task I-5
+5. /backlog:launch P-5    # Create worktree for task P-5
 6. (work in worktree)     # Agent executes task
-7. /backlog:complete I-5  # Rebase and request review
-8. /backlog:prune I-5     # Archive after review passes
+7. /backlog:complete P-5  # Rebase and request review
+8. /backlog:prune P-5     # Archive after review passes
 ```
 
 ### Agent Worktree Execution
@@ -102,11 +101,11 @@ Each task is a directory containing:
 
 ```
 tasks/
-├── I-1/
+├── [P]-1/
 │   ├── PRD.md        # Requirements and acceptance criteria
 │   ├── PROGRESS.md   # Reverse-chronological progress log
 │   └── REVIEW.md     # Review findings and verdict
-├── I-2/
+├── [P]-2/
 │   └── ...
 ├── archive/          # Completed tasks moved here
 └── INDEX.md          # Task index with status overview
