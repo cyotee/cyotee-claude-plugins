@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "cyotee's development workflow commands for Claude Code",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -14,8 +14,8 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-up"
       },
-      "description": "Context bootstrap commands for CLAUDE.md, PROMPT.md, and UNIFIED_PLAN.md",
-      "version": "1.0.0",
+      "description": "Context bootstrap commands for CLAUDE.md, PRD.md, and tasks/",
+      "version": "1.1.0",
       "author": {
         "name": "cyotee"
       },
@@ -28,13 +28,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-design"
       },
-      "description": "Interactive design sessions for defining tasks and user stories",
-      "version": "1.0.0",
+      "description": "Interactive design sessions for defining tasks in tasks/ directory",
+      "version": "1.1.0",
       "author": {
         "name": "cyotee"
       },
       "category": "planning",
-      "tags": ["workflow", "planning", "user-stories", "unified-plan"]
+      "tags": ["workflow", "planning", "user-stories", "tasks"]
     },
     {
       "name": "backlog",
@@ -42,13 +42,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
-      "description": "Manage UNIFIED_PLAN.md tasks - status, prune, launch worktrees",
-      "version": "1.0.0",
+      "description": "Manage tasks/ directory - status, launch, complete, prune worktrees",
+      "version": "1.2.0",
       "author": {
         "name": "cyotee"
       },
       "category": "productivity",
-      "tags": ["workflow", "git-worktree", "task-management", "unified-plan"]
+      "tags": ["workflow", "git-worktree", "task-management", "tasks"]
     }
   ]
 }
