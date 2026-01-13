@@ -4,8 +4,8 @@
     "name": "cyotee"
   },
   "metadata": {
-    "description": "cyotee's development workflow commands for Claude Code",
-    "version": "1.1.0"
+    "description": "cyotee's development workflow commands for Claude Code - task management with agent loops",
+    "version": "2.0.0"
   },
   "plugins": [
     {
@@ -14,13 +14,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-up"
       },
-      "description": "Context bootstrap commands for CLAUDE.md, PRD.md, and tasks/",
-      "version": "1.1.0",
+      "description": "Context bootstrap commands for CLAUDE.md, PRD.md, and PROMPT.md with mode-aware agent support",
+      "version": "2.0.0",
       "author": {
         "name": "cyotee"
       },
       "category": "productivity",
-      "tags": ["workflow", "context", "claude-md", "bootstrap"]
+      "tags": ["workflow", "context", "claude-md", "bootstrap", "agent"]
     },
     {
       "name": "design",
@@ -28,13 +28,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-design"
       },
-      "description": "Interactive design sessions for defining tasks in tasks/ directory",
-      "version": "1.1.0",
+      "description": "Interactive design sessions for defining tasks in tasks/ directory with repo-prefixed IDs",
+      "version": "2.0.0",
       "author": {
         "name": "cyotee"
       },
       "category": "planning",
-      "tags": ["workflow", "planning", "user-stories", "tasks"]
+      "tags": ["workflow", "planning", "user-stories", "task-management", "design"]
     },
     {
       "name": "backlog",
@@ -42,13 +42,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
-      "description": "Manage tasks/ directory - status, launch, complete, prune worktrees",
-      "version": "1.2.0",
+      "description": "Manage tasks in tasks/ directory - launch agents, review, complete, and archive with Stop hook",
+      "version": "2.0.0",
       "author": {
         "name": "cyotee"
       },
       "category": "productivity",
-      "tags": ["workflow", "git-worktree", "task-management", "tasks"]
+      "tags": ["workflow", "git-worktree", "task-management", "agent", "hooks"]
     }
   ]
 }
