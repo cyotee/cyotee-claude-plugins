@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "cyotee's development workflow commands for Claude Code - task management with agent loops",
-    "version": "2.0.0"
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -28,13 +28,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-design"
       },
-      "description": "Interactive design sessions for defining tasks in tasks/ directory with repo-prefixed IDs",
-      "version": "2.0.0",
+      "description": "Interactive design sessions for defining tasks in tasks/ directory with repo-prefixed IDs and dependency validation",
+      "version": "2.1.0",
       "author": {
         "name": "cyotee"
       },
       "category": "planning",
-      "tags": ["workflow", "planning", "user-stories", "task-management", "design"]
+      "tags": ["workflow", "planning", "user-stories", "task-management", "design", "dependencies"]
     },
     {
       "name": "backlog",
@@ -42,13 +42,13 @@
         "source": "github",
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
-      "description": "Manage tasks in tasks/ directory - launch agents, review, complete, and archive with Stop hook",
-      "version": "2.0.0",
+      "description": "Manage tasks in tasks/ directory - launch agents, review, complete, archive with Stop hook and dependency resolution",
+      "version": "2.1.0",
       "author": {
         "name": "cyotee"
       },
       "category": "productivity",
-      "tags": ["workflow", "git-worktree", "task-management", "agent", "hooks"]
+      "tags": ["workflow", "git-worktree", "task-management", "agent", "hooks", "dependencies"]
     }
   ]
 }
