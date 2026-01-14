@@ -1,0 +1,17 @@
+# design.yaml - Task management configuration
+# This file is shared with the team (checked into git)
+
+repo_prefix: MKT
+repo_name: Cyotee Claude Plugins
+
+# Optional: define submodules for root repos
+# submodules:
+#   - prefix: DESIGN
+#     path: plugins/design
+#     name: Design Plugin
+#   - prefix: BACKLOG
+#     path: plugins/backlog
+#     name: Backlog Plugin
+#   - prefix: UP
+#     path: plugins/up
+#     name: Up Plugin
