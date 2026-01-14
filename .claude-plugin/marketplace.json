@@ -43,7 +43,7 @@
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
       "description": "Manage tasks in tasks/ directory - launch agents, review, complete, archive with Stop hook and dependency resolution",
-      "version": "2.4.0",
+      "version": "2.5.1",
       "author": {
         "name": "cyotee"
       },
