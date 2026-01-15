@@ -9,7 +9,7 @@
 |----|-------|--------|--------------|----------|
 | MKT-001 | Task Reviewer (Agent + Skill) | Complete | - | - |
 | MKT-002 | Code Reviewer (Agent + Skill) | Complete | - | - |
-| MKT-003 | Dependency Analyzer (Agent Only) | In Progress | - | - |
+| MKT-003 | Dependency Analyzer (Agent Only) | Complete | - | - |
 | MKT-004 | SessionStart Hook | Complete | - | - |
 | MKT-005 | Progress Logging Hook (PostToolUse) | Ready | - | - |
 | MKT-006 | Safety Guard Hook (PreToolUse) | Ready | - | - |
