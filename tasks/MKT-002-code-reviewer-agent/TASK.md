@@ -1,24 +1,38 @@
-# Task MKT-002: Code Reviewer Agent
+# Task MKT-002: Code Reviewer (Agent + Skill)
 
 **Repo:** Cyotee Claude Plugins
 **Status:** Ready
 **Created:** 2026-01-14
 **Dependencies:** None
-**Worktree:** `feature/code-reviewer-agent`
+**Worktree:** `feature/code-reviewer`
 
 ---
 
 ## Description
 
-Create a `code-reviewer` agent for the backlog plugin that performs automated first-pass code reviews. The agent reads task requirements, analyzes changed files, checks acceptance criteria against implementation, and populates REVIEW.md with findings.
+Create both a `code-reviewer` skill and `code-auditor` agent for the backlog plugin. The skill provides inline code review knowledge during normal work. The agent performs comprehensive automated reviews in isolated context, populating REVIEW.md with findings.
+
+**Two Components:**
+- **Skill (`code-reviewer`)**: Inline review standards, quick checks, review knowledge
+- **Agent (`code-auditor`)**: Comprehensive review, REVIEW.md population, isolated analysis
 
 ## Dependencies
 
-- None (can be developed in parallel with MKT-001)
+- None
 
 ## User Stories
 
-### US-MKT-002.1: Requirements-Based Review
+### US-MKT-002.1: Inline Code Review Knowledge (Skill)
+
+As a developer, I want Claude to automatically apply code review standards when I ask about code quality so that I get consistent feedback inline.
+
+**Acceptance Criteria:**
+- [ ] Skill triggers on "review this code", "check my implementation", "code quality"
+- [ ] Skill provides review checklist and standards
+- [ ] Skill works in shared conversation context
+- [ ] Skill references detailed docs via progressive disclosure
+
+### US-MKT-002.2: Requirements-Based Review (Agent)
 
 As a developer, I want the agent to compare implementation against TASK.md requirements so that I know if acceptance criteria are met.
 
@@ -28,7 +42,7 @@ As a developer, I want the agent to compare implementation against TASK.md requi
 - [ ] Agent checks each criterion against the implementation
 - [ ] Agent reports which criteria are met/unmet
 
-### US-MKT-002.2: Code Quality Analysis
+### US-MKT-002.3: Code Quality Analysis (Agent)
 
 As a developer, I want the agent to identify potential issues so that bugs are caught before human review.
 
@@ -38,7 +52,7 @@ As a developer, I want the agent to identify potential issues so that bugs are c
 - [ ] Agent flags missing tests
 - [ ] Agent notes security concerns if applicable
 
-### US-MKT-002.3: Automated REVIEW.md Population
+### US-MKT-002.4: Automated REVIEW.md Population (Agent)
 
 As a developer, I want the agent to document findings in REVIEW.md so that the review is preserved.
 
@@ -48,32 +62,42 @@ As a developer, I want the agent to document findings in REVIEW.md so that the r
 - [ ] Agent provides a summary and recommendation
 - [ ] Agent outputs `<promise>REVIEW_COMPLETE</promise>` when done
 
-### US-MKT-002.4: Model Configuration
-
-As a developer, I want to optionally use a different model for review so that I get a fresh perspective.
-
-**Acceptance Criteria:**
-- [ ] Agent can be invoked with different model (haiku for speed, opus for depth)
-- [ ] Default model is configurable in agent definition
-
 ## Technical Details
 
-The agent should be defined in `plugins/backlog/agents/code-reviewer.md` with:
-- YAML frontmatter specifying tools (Read, Glob, Grep, Bash for git diff)
-- System prompt describing review methodology
+### Skill: `code-reviewer`
+
+Location: `plugins/backlog/skills/code-reviewer/`
+
+```
+skills/code-reviewer/
+├── SKILL.md              # Core review standards and triggers
+├── checklist.md          # Detailed review checklist
+└── patterns.md           # Common issues and anti-patterns
+```
+
+**Triggers:** "review this code", "check implementation", "code quality", "is this code ready"
+
+### Agent: `code-auditor`
+
+Location: `plugins/backlog/agents/code-auditor.md`
+
+- YAML frontmatter: tools (Read, Glob, Grep, Bash), model (sonnet)
+- System prompt describing comprehensive review methodology
 - Instructions to read TASK.md, PROGRESS.md first
 - Output format aligned with REVIEW.md structure
 
-The `/backlog:review` command can optionally invoke this agent instead of just setting up review mode.
+**Triggers:** "full code review", "audit implementation", "review all changes", "populate REVIEW.md"
 
 ## Files to Create/Modify
 
 **New Files:**
-- `plugins/backlog/agents/code-reviewer.md` - Agent definition with system prompt and tools
+- `plugins/backlog/skills/code-reviewer/SKILL.md` - Core review skill
+- `plugins/backlog/skills/code-reviewer/checklist.md` - Detailed checklist
+- `plugins/backlog/skills/code-reviewer/patterns.md` - Common issues
+- `plugins/backlog/agents/code-auditor.md` - Comprehensive review agent
 
 **Modified Files:**
-- `plugins/backlog/.claude-plugin/plugin.json` - Add agents directory reference
-- `plugins/backlog/commands/review.md` - Optionally invoke agent for automated review
+- `plugins/backlog/commands/review.md` - Reference skill/agent options
 
 ## Inventory Check
 
@@ -82,15 +106,16 @@ Before starting, verify:
 - [ ] `plugins/backlog/.claude-plugin/plugin.json` exists
 - [ ] Understand REVIEW.md structure and sections
 - [ ] Understand git diff commands for worktree analysis
+- [ ] Review MKT-001 implementation pattern (task-reviewer skill + task-auditor agent)
 
 ## Completion Criteria
 
+- [ ] Skill directory created with SKILL.md and supporting files
 - [ ] Agent file created with proper frontmatter
-- [ ] Agent can be invoked via Task tool
+- [ ] Skill triggers on inline review requests
 - [ ] Agent produces findings in REVIEW.md format
 - [ ] Agent checks acceptance criteria systematically
-- [ ] plugin.json updated if needed
-- [ ] Tested with a sample task in review mode
+- [ ] Both tested with sample code
 
 ---
 

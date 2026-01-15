@@ -1,16 +1,22 @@
-# Task MKT-003: Dependency Analyzer Agent
+# Task MKT-003: Dependency Analyzer (Agent Only)
 
 **Repo:** Cyotee Claude Plugins
 **Status:** Ready
 **Created:** 2026-01-14
 **Dependencies:** None
-**Worktree:** `feature/dependency-analyzer-agent`
+**Worktree:** `feature/dependency-analyzer`
 
 ---
 
 ## Description
 
 Create a `dependency-analyzer` agent that builds and analyzes task dependency graphs across repos and submodules. The agent detects cycles, identifies orphaned tasks, computes accurate status based on dependencies, and suggests optimal task ordering.
+
+**Agent Only (No Skill):** This is implemented as an agent only because:
+- Computational/algorithmic work (graph algorithms, cycle detection, topological sort)
+- Requires scanning multiple files across repos (benefits from isolated context)
+- Always produces a comprehensive report (no inline knowledge to apply)
+- No reusable "standards" to teach - it's pure analysis
 
 ## Dependencies
 
