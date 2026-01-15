@@ -7,7 +7,7 @@
 
 | ID | Title | Status | Dependencies | Worktree |
 |----|-------|--------|--------------|----------|
-| MKT-001 | Task Reviewer Agent | Ready | - | - |
+| MKT-001 | Task Reviewer Agent | In Progress | - | - |
 | MKT-002 | Code Reviewer Agent | Ready | - | - |
 | MKT-003 | Dependency Analyzer Agent | Ready | - | - |
 | MKT-004 | SessionStart Hook | Complete | - | - |

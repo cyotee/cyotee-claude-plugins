@@ -9,7 +9,9 @@
       "Bash(grep:*)",
       "Bash(git push:*)",
       "Bash(git submodule:*)",
-      "Bash(git branch:*)"
+      "Bash(git branch:*)",
+      "Bash(ls:*)",
+      "Skill(backlog:complete)"
     ]
   }
 }
