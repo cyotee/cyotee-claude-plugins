@@ -8,7 +8,7 @@
 | ID | Title | Status | Dependencies | Worktree |
 |----|-------|--------|--------------|----------|
 | MKT-001 | Task Reviewer (Agent + Skill) | Complete | - | - |
-| MKT-002 | Code Reviewer (Agent + Skill) | In Progress | - | - |
+| MKT-002 | Code Reviewer (Agent + Skill) | Complete | - | - |
 | MKT-003 | Dependency Analyzer (Agent Only) | Ready | - | - |
 | MKT-004 | SessionStart Hook | Complete | - | - |
 | MKT-005 | Progress Logging Hook (PostToolUse) | Ready | - | - |
