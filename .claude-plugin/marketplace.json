@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "cyotee's development workflow commands for Claude Code - task management with agent loops",
-    "version": "2.5.0"
+    "version": "2.6.0"
   },
   "plugins": [
     {
@@ -43,7 +43,7 @@
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
       "description": "Manage tasks in tasks/ directory - launch agents, review, complete, archive with Stop hook and dependency resolution",
-      "version": "2.6.0",
+      "version": "2.7.0",
       "author": {
         "name": "cyotee"
       },
