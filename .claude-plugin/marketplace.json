@@ -49,6 +49,20 @@
       },
       "category": "productivity",
       "tags": ["workflow", "git-worktree", "task-management", "agent", "hooks", "dependencies"]
+    },
+    {
+      "name": "foundry",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/foundry-skills"
+      },
+      "description": "Skills with progressive disclosure for Foundry - the blazing fast Ethereum development toolkit (forge, cast, anvil)",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "development",
+      "tags": ["solidity", "ethereum", "foundry", "forge", "cast", "anvil", "smart-contracts", "testing"]
     }
   ]
 }
