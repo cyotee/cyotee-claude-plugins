@@ -56,8 +56,8 @@
         "source": "github",
         "repo": "cyotee/foundry-skills"
       },
-      "description": "Skills with progressive disclosure for Foundry - the blazing fast Ethereum development toolkit (forge, cast, anvil)",
-      "version": "1.0.0",
+      "description": "Skills and Solidity LSP for Foundry - the blazing fast Ethereum development toolkit (forge, cast, anvil)",
+      "version": "1.1.0",
       "author": {
         "name": "cyotee"
       },
