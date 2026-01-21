@@ -57,7 +57,7 @@
         "repo": "cyotee/foundry-skills"
       },
       "description": "Skills and Solidity LSP for Foundry - the blazing fast Ethereum development toolkit (forge, cast, anvil)",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "author": {
         "name": "cyotee"
       },
