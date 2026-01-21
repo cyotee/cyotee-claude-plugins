@@ -4,6 +4,8 @@ A Claude Code plugin marketplace providing development workflow commands for man
 
 ## Installation
 
+### Claude Code
+
 ```bash
 # Add this marketplace (one-time)
 /plugin marketplace add cyotee/cyotee-claude-plugins
@@ -16,6 +18,33 @@ A Claude Code plugin marketplace providing development workflow commands for man
 # Or browse available plugins
 /plugin
 ```
+
+### OpenCode
+
+These plugins are also compatible with [OpenCode](https://opencode.ai/). To install:
+
+```bash
+# Clone the repository
+git clone https://github.com/cyotee/cyotee-claude-plugins.git
+cd cyotee-claude-plugins
+
+# Install all plugins
+./install-opencode.sh
+
+# Or install specific plugins
+./install-opencode.sh up
+./install-opencode.sh backlog
+./install-opencode.sh design
+
+# To uninstall
+./install-opencode.sh --uninstall
+```
+
+**Note:** Command names differ slightly in OpenCode due to namespace handling:
+- Claude Code: `/backlog:launch` → OpenCode: `/backlog-launch`
+- Claude Code: `/design:init` → OpenCode: `/design-init`
+
+See [OPENCODE_PLUGINS.md](OPENCODE_PLUGINS.md) for full compatibility details.
 
 ## Plugins
 

@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "cyotee's development workflow commands for Claude Code - task management with agent loops",
-    "version": "2.6.0"
+    "version": "3.0.0"
   },
   "plugins": [
     {
@@ -15,7 +15,7 @@
         "repo": "cyotee/cyotee-claude-plugin-up"
       },
       "description": "Context bootstrap commands for CLAUDE.md, PRD.md, and PROMPT.md with mode-aware agent support",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "author": {
         "name": "cyotee"
       },
@@ -29,7 +29,7 @@
         "repo": "cyotee/cyotee-claude-plugin-design"
       },
       "description": "Interactive design sessions for defining tasks in tasks/ directory with repo-prefixed IDs and dependency validation",
-      "version": "2.2.0",
+      "version": "3.0.0",
       "author": {
         "name": "cyotee"
       },
@@ -43,7 +43,7 @@
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
       "description": "Manage tasks in tasks/ directory - launch agents, review, complete, archive with Stop hook and dependency resolution",
-      "version": "2.8.1",
+      "version": "3.0.0",
       "author": {
         "name": "cyotee"
       },

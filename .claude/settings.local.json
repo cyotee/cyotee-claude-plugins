@@ -12,7 +12,10 @@
       "Bash(git branch:*)",
       "Bash(ls:*)",
       "Skill(backlog:complete)",
-      "Skill(backlog:work)"
+      "Skill(backlog:work)",
+      "WebFetch(domain:opencode.ai)",
+      "Bash(/Users/cyotee/Development/github-cyotee/indexedex/lib/daosys/lib/cyotee-claude-plugins/install-opencode.sh:*)",
+      "Bash(xargs:*)"
     ]
   }
 }
