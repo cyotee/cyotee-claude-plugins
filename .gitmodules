@@ -7,3 +7,6 @@
 [submodule "plugins/up"]
 	path = plugins/up
 	url = https://github.com/cyotee/cyotee-claude-plugin-up.git
+[submodule "plugins/foundry"]
+	path = plugins/foundry
+	url = https://github.com/cyotee/foundry-skills.git
