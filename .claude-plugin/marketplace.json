@@ -77,6 +77,20 @@
       },
       "category": "development",
       "tags": ["boardgame", "game-development", "javascript", "react", "multiplayer", "turn-based"]
+    },
+    {
+      "name": "crane",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/cyotee-claude-plugin-crane"
+      },
+      "description": "Development tools and guidance for the Crane Diamond framework - architecture patterns, testing, deployment, code style, and NatSpec documentation",
+      "version": "0.1.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "development",
+      "tags": ["solidity", "diamond", "erc2535", "defi", "foundry", "smart-contracts", "testing"]
     }
   ]
 }
