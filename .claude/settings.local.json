@@ -15,7 +15,15 @@
       "Skill(backlog:work)",
       "WebFetch(domain:opencode.ai)",
       "Bash(/Users/cyotee/Development/github-cyotee/indexedex/lib/daosys/lib/cyotee-claude-plugins/install-opencode.sh:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:book.getfoundry.sh)",
+      "WebFetch(domain:getfoundry.sh)",
+      "Bash(ln:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "WebSearch",
+      "Bash(CLAUDE_PLUGIN_ROOT=\"./plugins/backlog\" ./plugins/backlog/scripts/index-to-json.sh:*)"
     ]
   }
 }
