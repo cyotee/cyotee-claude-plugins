@@ -68,7 +68,7 @@
       "name": "boardgame-io",
       "source": {
         "source": "github",
-        "repo": "cyotee/boardgame-io-skills"
+        "repo": "cyotee/cyotee-claude-plugin-boardgameIO"
       },
       "description": "Skills for boardgame.io - the open source game engine for turn-based games",
       "version": "1.0.0",
