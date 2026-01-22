@@ -1,0 +1,8 @@
+{
+  "name": "boardgame-io",
+  "description": "Skills with progressive disclosure for boardgame.io - the open source game engine for turn-based games",
+  "version": "1.0.0",
+  "author": {
+    "name": "cyotee"
+  }
+}

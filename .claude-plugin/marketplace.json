@@ -63,6 +63,20 @@
       },
       "category": "development",
       "tags": ["solidity", "ethereum", "foundry", "forge", "cast", "anvil", "smart-contracts", "testing"]
+    },
+    {
+      "name": "boardgame-io",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/boardgame-io-skills"
+      },
+      "description": "Skills for boardgame.io - the open source game engine for turn-based games",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "development",
+      "tags": ["boardgame", "game-development", "javascript", "react", "multiplayer", "turn-based"]
     }
   ]
 }
