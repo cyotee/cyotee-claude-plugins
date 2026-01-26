@@ -99,7 +99,7 @@
         "repo": "cyotee/homunculus"
       },
       "description": "A Claude Code plugin that's alive. Birth it, bond to it, build with it. Observes patterns, learns instincts, evolves capabilities.",
-      "version": "2.0.0-alpha",
+      "version": "2.0.1",
       "author": {
         "name": "cyotee"
       },
