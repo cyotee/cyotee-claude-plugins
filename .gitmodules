@@ -10,3 +10,6 @@
 [submodule "plugins/foundry"]
 	path = plugins/foundry
 	url = https://github.com/cyotee/foundry-skills.git
+[submodule "plugins/homunculus"]
+	path = plugins/homunculus
+	url = https://github.com/cyotee/homunculus.git
