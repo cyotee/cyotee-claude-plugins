@@ -112,8 +112,8 @@
         "source": "github",
         "repo": "cyotee/balancer-v3-skill"
       },
-      "description": "Progressive disclosure skills for Balancer V3 protocol - Vault architecture, pool types (Weighted, Stable, Gyro, CoW), Router, and Hooks system",
-      "version": "0.1.0",
+      "description": "Progressive disclosure skills for Balancer V3 protocol - Vault architecture, pool types (Weighted, Stable, Gyro, CoW, RECLAMM), Router, and Hooks system",
+      "version": "0.2.0",
       "author": {
         "name": "Balancer Labs"
       },
