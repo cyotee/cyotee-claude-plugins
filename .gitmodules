@@ -13,3 +13,6 @@
 [submodule "plugins/homunculus"]
 	path = plugins/homunculus
 	url = https://github.com/cyotee/homunculus.git
+[submodule "plugins/balancer-v3"]
+	path = plugins/balancer-v3
+	url = https://github.com/cyotee/balancer-v3-skill.git

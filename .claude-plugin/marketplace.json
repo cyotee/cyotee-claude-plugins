@@ -105,6 +105,20 @@
       },
       "category": "productivity",
       "tags": ["ai", "evolution", "living", "homunculus", "self-evolving", "instincts", "cross-project"]
+    },
+    {
+      "name": "balancer-v3",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/balancer-v3-skill"
+      },
+      "description": "Progressive disclosure skills for Balancer V3 protocol - Vault architecture, pool types (Weighted, Stable, Gyro, CoW), Router, and Hooks system",
+      "version": "0.1.0",
+      "author": {
+        "name": "Balancer Labs"
+      },
+      "category": "development",
+      "tags": ["solidity", "balancer", "defi", "amm", "vault", "weighted-pool", "stable-pool", "hooks", "smart-contracts"]
     }
   ]
 }
