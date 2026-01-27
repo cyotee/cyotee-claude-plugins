@@ -16,3 +16,6 @@
 [submodule "plugins/balancer-v3"]
 	path = plugins/balancer-v3
 	url = https://github.com/cyotee/balancer-v3-skill.git
+[submodule "plugins/aave-v3"]
+	path = plugins/aave-v3
+	url = https://github.com/cyotee/aave-v3-skill.git

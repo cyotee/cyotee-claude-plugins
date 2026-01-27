@@ -119,6 +119,20 @@
       },
       "category": "development",
       "tags": ["solidity", "balancer", "defi", "amm", "vault", "weighted-pool", "stable-pool", "hooks", "smart-contracts"]
+    },
+    {
+      "name": "aave-v3",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/aave-v3-skill"
+      },
+      "description": "Progressive disclosure skills for Aave V3 protocol - Pool operations, aTokens, debt tokens, interest rates, eModes, flash loans, and StataToken (ERC-4626)",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aave"
+      },
+      "category": "development",
+      "tags": ["solidity", "aave", "defi", "lending", "borrowing", "flash-loans", "atokens", "erc4626", "smart-contracts"]
     }
   ]
 }
