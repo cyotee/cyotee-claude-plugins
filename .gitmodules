@@ -19,3 +19,6 @@
 [submodule "plugins/aave-v3"]
 	path = plugins/aave-v3
 	url = https://github.com/cyotee/aave-v3-skill.git
+[submodule "plugins/aave-v4"]
+	path = plugins/aave-v4
+	url = https://github.com/cyotee/aave-V4-skill.git

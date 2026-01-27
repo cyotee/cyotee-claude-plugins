@@ -133,6 +133,20 @@
       },
       "category": "development",
       "tags": ["solidity", "aave", "defi", "lending", "borrowing", "flash-loans", "atokens", "erc4626", "smart-contracts"]
+    },
+    {
+      "name": "aave-v4",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/aave-V4-skill"
+      },
+      "description": "Progressive disclosure skills for Aave V4 protocol - Hub-and-Spoke architecture, Risk Premium, Dynamic Risk Configuration, Target HF liquidation, Position Managers",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aave"
+      },
+      "category": "development",
+      "tags": ["solidity", "aave", "defi", "lending", "borrowing", "hub-spoke", "risk-premium", "liquidation", "smart-contracts"]
     }
   ]
 }
