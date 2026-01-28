@@ -189,6 +189,20 @@
       },
       "category": "development",
       "tags": ["solidity", "euler", "evc", "evk", "defi", "lending", "borrowing", "erc4626", "vault", "oracle", "smart-contracts"]
+    },
+    {
+      "name": "aerodrome-slipstream",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/aerodrome-V2-slipstream-skill"
+      },
+      "description": "Progressive disclosure skills for Aerodrome V2 Slipstream - concentrated liquidity AMM on Base with tick-based pricing, NFT positions, gauge rewards, and TWAP oracles",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aerodrome Finance"
+      },
+      "category": "development",
+      "tags": ["solidity", "aerodrome", "slipstream", "concentrated-liquidity", "defi", "amm", "uniswap-v3", "ticks", "nft-positions", "gauge", "base", "smart-contracts"]
     }
   ]
 }

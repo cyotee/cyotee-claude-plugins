@@ -31,3 +31,6 @@
 [submodule "plugins/euler-lending"]
 	path = plugins/euler-lending
 	url = https://github.com/cyotee/euler-lending-skill.git
+[submodule "plugins/aerodrome-slipstream"]
+	path = plugins/aerodrome-slipstream
+	url = https://github.com/cyotee/aerodrome-V2-slipstream-skill.git
