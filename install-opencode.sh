@@ -52,6 +52,7 @@ ALL_PLUGINS=(
     "euler-lending"
     "uniswap-v3"
     "uniswap-v4"
+    "resupply"
 )
 
 print_header() {
@@ -281,7 +282,7 @@ Available plugins:
   Solidity:    foundry, crane
   Games:       boardgame-io
   DeFi:        balancer-v3, aave-v3, aave-v4, aerodrome, aerodrome-slipstream,
-               compound-v3-comet, euler-lending, uniswap-v3, uniswap-v4
+               compound-v3-comet, euler-lending, uniswap-v3, uniswap-v4, resupply
 
 Setup:
   git clone https://github.com/cyotee/cyotee-claude-plugins.git
