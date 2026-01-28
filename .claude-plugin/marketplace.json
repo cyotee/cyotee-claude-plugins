@@ -147,6 +147,20 @@
       },
       "category": "development",
       "tags": ["solidity", "aave", "defi", "lending", "borrowing", "hub-spoke", "risk-premium", "liquidation", "smart-contracts"]
+    },
+    {
+      "name": "aerodrome",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/aerodrome-skill"
+      },
+      "description": "Progressive disclosure skills for Aerodrome protocol - ve(3,3) AMM on Base with pools, voting escrow, gauges, emissions, and rewards",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aerodrome Finance"
+      },
+      "category": "development",
+      "tags": ["solidity", "aerodrome", "velodrome", "defi", "amm", "ve33", "voting-escrow", "gauge", "emissions", "base", "smart-contracts"]
     }
   ]
 }

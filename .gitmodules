@@ -22,3 +22,6 @@
 [submodule "plugins/aave-v4"]
 	path = plugins/aave-v4
 	url = https://github.com/cyotee/aave-V4-skill.git
+[submodule "plugins/aerodrome"]
+	path = plugins/aerodrome
+	url = https://github.com/cyotee/aerodrome-skill.git
