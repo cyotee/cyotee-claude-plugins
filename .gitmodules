@@ -40,3 +40,6 @@
 [submodule "plugins/crane"]
 	path = plugins/crane
 	url = https://github.com/cyotee/cyotee-claude-plugin-crane.git
+[submodule "plugins/uniswap-v4"]
+	path = plugins/uniswap-v4
+	url = https://github.com/cyotee/uniswap-V4-skill.git
