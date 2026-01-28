@@ -46,3 +46,6 @@
 [submodule "plugins/boardgame-io"]
 	path = plugins/boardgame-io
 	url = https://github.com/cyotee/cyotee-claude-plugin-boardgameIO.git
+[submodule "plugins/resupply"]
+	path = plugins/resupply
+	url = https://github.com/cyotee/resupply-skill.git
