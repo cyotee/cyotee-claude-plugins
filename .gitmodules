@@ -43,3 +43,6 @@
 [submodule "plugins/uniswap-v4"]
 	path = plugins/uniswap-v4
 	url = https://github.com/cyotee/uniswap-V4-skill.git
+[submodule "plugins/boardgame-io"]
+	path = plugins/boardgame-io
+	url = https://github.com/cyotee/cyotee-claude-plugin-boardgameIO.git
