@@ -161,6 +161,20 @@
       },
       "category": "development",
       "tags": ["solidity", "aerodrome", "velodrome", "defi", "amm", "ve33", "voting-escrow", "gauge", "emissions", "base", "smart-contracts"]
+    },
+    {
+      "name": "compound-v3-comet",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/compound-V3-comet-skill"
+      },
+      "description": "Progressive disclosure skills for Compound V3 Comet protocol - monolithic money market with single borrowable asset, collateral factors, kinked interest rates, absorb liquidation, rewards, and governance",
+      "version": "0.1.0",
+      "author": {
+        "name": "Compound Labs"
+      },
+      "category": "development",
+      "tags": ["solidity", "compound", "comet", "defi", "lending", "borrowing", "collateral", "liquidation", "interest-rates", "smart-contracts"]
     }
   ]
 }

@@ -25,3 +25,6 @@
 [submodule "plugins/aerodrome"]
 	path = plugins/aerodrome
 	url = https://github.com/cyotee/aerodrome-skill.git
+[submodule "plugins/compound-v3-comet"]
+	path = plugins/compound-v3-comet
+	url = https://github.com/cyotee/compound-V3-comet-skill.git
