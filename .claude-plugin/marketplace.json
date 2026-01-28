@@ -175,6 +175,20 @@
       },
       "category": "development",
       "tags": ["solidity", "compound", "comet", "defi", "lending", "borrowing", "collateral", "liquidation", "interest-rates", "smart-contracts"]
+    },
+    {
+      "name": "euler-lending",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/euler-lending-skill"
+      },
+      "description": "Progressive disclosure skills for Euler Lending protocol - Ethereum Vault Connector (EVC), Euler Vault Kit (EVK), modular oracle system, and periphery infrastructure for composable lending",
+      "version": "0.1.0",
+      "author": {
+        "name": "Euler Labs"
+      },
+      "category": "development",
+      "tags": ["solidity", "euler", "evc", "evk", "defi", "lending", "borrowing", "erc4626", "vault", "oracle", "smart-contracts"]
     }
   ]
 }

@@ -28,3 +28,6 @@
 [submodule "plugins/compound-v3-comet"]
 	path = plugins/compound-v3-comet
 	url = https://github.com/cyotee/compound-V3-comet-skill.git
+[submodule "plugins/euler-lending"]
+	path = plugins/euler-lending
+	url = https://github.com/cyotee/euler-lending-skill.git
