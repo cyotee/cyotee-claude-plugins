@@ -231,6 +231,20 @@
       },
       "category": "development",
       "tags": ["solidity", "uniswap", "hooks", "singleton", "flash-accounting", "transient-storage", "erc6909", "defi", "smart-contracts"]
+    },
+    {
+      "name": "resupply",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/resupply-skill"
+      },
+      "description": "Progressive disclosure skills for Resupply protocol - CDP-based stablecoin lending with reUSD, ERC4626 collateral, liquidations, redemptions, insurance pool, governance staking, and multi-reward emissions",
+      "version": "0.1.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "development",
+      "tags": ["solidity", "resupply", "cdp", "stablecoin", "defi", "lending", "erc4626", "liquidation", "governance", "smart-contracts"]
     }
   ]
 }
