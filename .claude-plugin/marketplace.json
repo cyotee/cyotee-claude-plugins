@@ -43,7 +43,7 @@
         "repo": "cyotee/cyotee-claude-plugin-backlog"
       },
       "description": "Manage tasks in tasks/ directory - launch agents, review, complete, archive with Stop hook and dependency resolution",
-      "version": "3.0.0",
+      "version": "4.0.1",
       "author": {
         "name": "cyotee"
       },
@@ -99,7 +99,7 @@
         "repo": "cyotee/homunculus"
       },
       "description": "A Claude Code plugin that's alive. Birth it, bond to it, build with it. Observes patterns, learns instincts, evolves capabilities.",
-      "version": "2.2.0",
+      "version": "2.3.1",
       "author": {
         "name": "cyotee"
       },
