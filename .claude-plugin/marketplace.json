@@ -245,6 +245,21 @@
       },
       "category": "development",
       "tags": ["solidity", "resupply", "cdp", "stablecoin", "defi", "lending", "erc4626", "liquidation", "governance", "smart-contracts"]
+    },
+    {
+      "name": "qmd",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/claude-qmd"
+      },
+      "description": "Local semantic search for documentation using QMD - indexes markdown files with BM25, vector embeddings, and hybrid search with LLM reranking. MCP server integration included.",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee",
+        "upstream": "Tobi Lutke"
+      },
+      "category": "productivity",
+      "tags": ["search", "semantic", "documentation", "rag", "mcp", "embeddings", "local", "indexing"]
     }
   ]
 }

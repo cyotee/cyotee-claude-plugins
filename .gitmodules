@@ -49,3 +49,6 @@
 [submodule "plugins/resupply"]
 	path = plugins/resupply
 	url = https://github.com/cyotee/resupply-skill.git
+[submodule "plugins/qmd"]
+	path = plugins/qmd
+	url = https://github.com/cyotee/claude-qmd.git
