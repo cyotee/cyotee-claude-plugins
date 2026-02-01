@@ -253,7 +253,7 @@
         "repo": "cyotee/claude-qmd"
       },
       "description": "Local semantic search for documentation using QMD - indexes markdown files with BM25, vector embeddings, and hybrid search with LLM reranking. MCP server integration included.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "cyotee",
         "upstream": "Tobi Lutke"
