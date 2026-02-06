@@ -29,7 +29,7 @@
         "repo": "cyotee/cyotee-claude-plugin-design"
       },
       "description": "Interactive design sessions for defining tasks in tasks/ directory with repo-prefixed IDs and dependency validation",
-      "version": "3.0.0",
+      "version": "4.0.1",
       "author": {
         "name": "cyotee"
       },
