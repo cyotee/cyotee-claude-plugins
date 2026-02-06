@@ -260,6 +260,20 @@
       },
       "category": "productivity",
       "tags": ["search", "semantic", "documentation", "rag", "mcp", "embeddings", "local", "indexing"]
+    },
+    {
+      "name": "voltaire-effect",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/voltaire-skill"
+      },
+      "description": "Progressive disclosure skills for voltaire-effect - Effect.ts integration for Voltaire Ethereum primitives with typed errors, dependency injection, composable workflows, branded types, and cryptographic services",
+      "version": "0.1.0",
+      "author": {
+        "name": "tevm"
+      },
+      "category": "development",
+      "tags": ["typescript", "effect", "voltaire", "ethereum", "branded-types", "dependency-injection", "typed-errors", "crypto", "web3"]
     }
   ]
 }

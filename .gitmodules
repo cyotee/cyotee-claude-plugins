@@ -52,3 +52,6 @@
 [submodule "plugins/qmd"]
 	path = plugins/qmd
 	url = https://github.com/cyotee/claude-qmd.git
+[submodule "plugins/voltaire-effect"]
+	path = plugins/voltaire-effect
+	url = https://github.com/cyotee/voltaire-skill.git
