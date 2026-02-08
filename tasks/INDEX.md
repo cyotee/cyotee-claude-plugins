@@ -1,7 +1,7 @@
 # Task Index: Cyotee Claude Plugins
 
 **Repo:** MKT
-**Last Updated:** 2026-01-14 (Task component types clarified)
+**Last Updated:** 2026-02-07 (Added MKT-009 Unified PM Plugin)
 
 ## Active Tasks
 
@@ -15,6 +15,7 @@
 | MKT-006 | Safety Guard Hook (PreToolUse) | Ready | - | - |
 | MKT-007 | Review Command Naming Clarity | Complete | - | - |
 | MKT-008 | In-Session Task Workflow | Complete | - | - |
+| MKT-009 | Unified PM Plugin | In Progress | - | - |
 
 ## Component Types
 
@@ -24,6 +25,7 @@
 | **Agent Only** | Computational/algorithmic, bulk operations | MKT-003 |
 | **Hook** | Event-triggered automation | MKT-004, MKT-005, MKT-006 |
 | **Documentation** | Update existing files | MKT-007 |
+| **Plugin** | Full plugin consolidation | MKT-009 |
 
 ## Status Legend
 
@@ -43,6 +45,7 @@
 - MKT-005: Progress Logging Hook - Medium priority
 - MKT-006: Safety Guard Hook - Low priority, Low effort
 - MKT-007: Review Command Naming Clarity - Low priority, Low effort
+- MKT-009: Unified PM Plugin - High priority, High effort
 
 ### Complete
 

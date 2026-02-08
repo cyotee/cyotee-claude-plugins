@@ -55,3 +55,6 @@
 [submodule "plugins/voltaire-effect"]
 	path = plugins/voltaire-effect
 	url = https://github.com/cyotee/voltaire-skill.git
+[submodule "plugins/pm"]
+	path = plugins/pm
+	url = https://github.com/cyotee/claude-pm-plugin.git

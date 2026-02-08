@@ -51,6 +51,20 @@
       "tags": ["workflow", "git-worktree", "task-management", "agent", "hooks", "dependencies"]
     },
     {
+      "name": "pm",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/claude-pm-plugin"
+      },
+      "description": "Unified project management - task design, backlog management, agent worktrees, code review, and dependency tracking. Consolidates design + backlog plugins.",
+      "version": "1.0.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "productivity",
+      "tags": ["workflow", "project-management", "task-management", "agent", "hooks", "dependencies", "git-worktree", "design", "code-review"]
+    },
+    {
       "name": "foundry",
       "source": {
         "source": "github",
@@ -98,8 +112,8 @@
         "source": "github",
         "repo": "cyotee/homunculus"
       },
-      "description": "A Claude Code plugin that's alive. Birth it, bond to it, build with it. Observes patterns, learns instincts, evolves capabilities.",
-      "version": "2.3.1",
+      "description": "A Claude Code plugin that's alive. Birth it, bond to it, build with it. Observes patterns, learns instincts, evolves real plugin capabilities.",
+      "version": "2.4.0",
       "author": {
         "name": "cyotee"
       },
