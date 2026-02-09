@@ -36,7 +36,12 @@ for plugin in "$PLUGINS_DIR"/*; do
         # fallback: take first non-empty line of file
         description=$(awk 'NF{print; exit}' "$cmd" | sed 's/\#/ /g' || true)
       fi
-      printf "---\ndescription: %s\n---\n\n" "$description" > "$out"
+      cat > "$out" <<EOF
+---
+description: $description
+---
+
+EOF
       perl -0777 -ne 'if (m/^---\s*\n(?:.*?\n)---\s*\n(.*)/s) { print $1 }' "$cmd" >> "$out" || true
       has_any=true
       log "$name: created command $base"
@@ -62,7 +67,21 @@ for plugin in "$PLUGINS_DIR"/*; do
         *) oc_model="anthropic/claude-sonnet" ;;
       esac
 
-      printf "---\ndescription: %s\nmode: subagent\nmodel: %s\ntools:\n  read: true\n  glob: true\n  grep: true\n  bash: true\n  write: false\n  edit: false\n---\n\n" "$description" "$oc_model" > "$out"
+      cat > "$out" <<EOF
+---
+description: $description
+mode: subagent
+model: $oc_model
+tools:
+  read: true
+  glob: true
+  grep: true
+  bash: true
+  write: false
+  edit: false
+---
+
+EOF
       perl -0777 -ne 'if (m/^---\s*\n(?:.*?\n)---\s*\n(.*)/s) { print $1 }' "$ag" >> "$out" || true
       has_any=true
       log "$name: created agent $base"
