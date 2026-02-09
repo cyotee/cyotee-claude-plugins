@@ -1,6 +1,7 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+If PROGRESS.md exists in the project root, read it for cross-session context before starting work.
 
 ## What This Is
 

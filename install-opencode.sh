@@ -36,23 +36,26 @@ NC='\033[0m' # No Color
 
 # All available plugins
 ALL_PLUGINS=(
-    "up"
-    "design"
-    "backlog"
-    "foundry"
-    "crane"
-    "boardgame-io"
-    "homunculus"
-    "balancer-v3"
     "aave-v3"
     "aave-v4"
     "aerodrome"
     "aerodrome-slipstream"
+    "backlog"
+    "balancer-v3"
+    "boardgame-io"
     "compound-v3-comet"
+    "crane"
+    "design"
     "euler-lending"
+    "foundry"
+    "homunculus"
+    "pm"
+    "qmd"
+    "resupply"
     "uniswap-v3"
     "uniswap-v4"
-    "resupply"
+    "up"
+    "voltaire-effect"
 )
 
 print_header() {
