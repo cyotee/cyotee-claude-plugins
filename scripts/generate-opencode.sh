@@ -30,14 +30,14 @@ for plugin in "$PLUGINS_DIR"/*; do
       base=$(basename "$cmd")
       out="$opencode_dir/commands/$base"
 
-      # extract description and body (after second ---)
-      description=$(awk 'BEGIN{in=0} /^---$/{ if(in==0){in=1; next} else {exit} } in==1 && /^description:/{sub(/^description:[ \t]*/, ""); print}' "$cmd" || true)
+      # extract description and body (after second ---) using perl for portability
+      description=$(perl -0777 -ne 'if (m/^---\s*\n(.*?)\n---/s) { if ($1 =~ /^description:\s*(.*)$/m) { print $1 } }' "$cmd" || true)
       if [[ -z "$description" ]]; then
         # fallback: take first non-empty line of file
         description=$(awk 'NF{print; exit}' "$cmd" | sed 's/\#/ /g' || true)
       fi
       printf "---\ndescription: %s\n---\n\n" "$description" > "$out"
-      awk 'BEGIN{c=0} /^---$/{c++; if(c==2){ getline; found=1 } } found{print}' "$cmd" >> "$out" || true
+      perl -0777 -ne 'if (m/^---\s*\n(?:.*?\n)---\s*\n(.*)/s) { print $1 }' "$cmd" >> "$out" || true
       has_any=true
       log "$name: created command $base"
     done
@@ -51,8 +51,8 @@ for plugin in "$PLUGINS_DIR"/*; do
       base=$(basename "$ag")
       out="$opencode_dir/agents/$base"
 
-      description=$(awk 'BEGIN{in=0} /^---$/{ if(in==0){in=1; next} else {exit} } in==1 && /^description:/{sub(/^description:[ \t]*/, ""); print}' "$ag" || true)
-      model=$(awk 'BEGIN{in=0} /^---$/{ if(in==0){in=1; next} else {exit} } in==1 && /^model:/{sub(/^model:[ \t]*/, ""); print}' "$ag" || true)
+      description=$(perl -0777 -ne 'if (m/^---\s*\n(.*?)\n---/s) { if ($1 =~ /^description:\s*(.*)$/m) { print $1 } }' "$ag" || true)
+      model=$(perl -0777 -ne 'if (m/^---\s*\n(.*?)\n---/s) { if ($1 =~ /^model:\s*(.*)$/m) { print $1 } }' "$ag" || true)
 
       # model map
       case "$model" in
@@ -63,7 +63,7 @@ for plugin in "$PLUGINS_DIR"/*; do
       esac
 
       printf "---\ndescription: %s\nmode: subagent\nmodel: %s\ntools:\n  read: true\n  glob: true\n  grep: true\n  bash: true\n  write: false\n  edit: false\n---\n\n" "$description" "$oc_model" > "$out"
-      awk 'BEGIN{c=0} /^---$/{c++; if(c==2){ getline; found=1 } } found{print}' "$ag" >> "$out" || true
+      perl -0777 -ne 'if (m/^---\s*\n(?:.*?\n)---\s*\n(.*)/s) { print $1 }' "$ag" >> "$out" || true
       has_any=true
       log "$name: created agent $base"
     done
