@@ -1,0 +1,11 @@
+{
+  "name": "chainlink",
+  "version": "0.1.0",
+  "description": "Progressive disclosure skills for Chainlink - VRF architecture and local testing with Chainlink Local",
+  "author": {
+    "name": "Chainlink",
+    "url": "https://chain.link"
+  },
+  "keywords": ["chainlink", "defi", "skills", "ethereum"],
+  "license": "MIT"
+}

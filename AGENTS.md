@@ -5,19 +5,20 @@ If PROGRESS.md exists in the project root, read it for cross-session context bef
 
 ## What This Is
 
-A Claude Code plugin marketplace (`cyotee`) providing development workflow plugins. Each plugin is a git submodule in `plugins/` with its own repository. The marketplace manifest lives at `.claude-plugin/marketplace.json`.
+A multi-harness plugin marketplace (`cyotee`): Claude Code is the **source of truth**; Codex dual-ship artifacts are **generated**. Plugins live under `plugins/` (often git submodules). Portable content is Agent Skills (`SKILL.md`).
 
 ## Repository Structure
 
 ```
-plugins/                    # Each plugin is a git submodule
+plugins/                    # Plugin packages (many are git submodules)
   {name}/
-    .claude-plugin/plugin.json   # Plugin metadata (name, version, description)
+    .claude-plugin/plugin.json   # Claude plugin metadata (SoT with marketplace)
+    .codex-plugin/plugin.json    # GENERATED Codex plugin metadata
     commands/*.md                # Command definitions (YAML frontmatter + markdown)
-    hooks/hooks.json             # Hook event registrations
+    hooks/hooks.json             # Hook event registrations (Claude-first)
     hooks/*.sh                   # Hook implementations (bash)
     agents/*.md                  # Agent definitions (YAML frontmatter + markdown)
-    skills/{name}/SKILL.md       # Skill definitions with supporting docs
+    skills/{name}/SKILL.md       # Portable Agent Skills
     scripts/*.sh                 # Utility scripts
     .opencode/                   # OpenCode-compatible mirrors of commands/agents/skills
     opencode.json                # OpenCode plugin config
@@ -25,18 +26,28 @@ tasks/                      # Task backlog (MKT-prefixed)
   INDEX.md                  # Task registry table
   {MKT-NNN-title}/          # Task directories with TASK.md, PROGRESS.md, REVIEW.md
   archive/                  # Completed tasks
-.claude-plugin/marketplace.json  # Central plugin registry
+.claude-plugin/marketplace.json  # Claude catalog (SOURCE OF TRUTH)
+.agents/plugins/marketplace.json # GENERATED Codex catalog
+scripts/generate-codex-marketplace.py  # Dual-ship generator
+docs/MULTI_HARNESS.md       # Install matrix and authoring rules
 design.yaml                 # Repo config (prefix: MKT, repo_name)
 install-opencode.sh         # Cross-platform installer for OpenCode
 ```
 
-## Core Plugins (Workflow Trio)
+## Multi-harness maintenance
 
-**up** - Context bootstrap: `/up` reads CLAUDE.md, `/up:plan` adds PRD.md, `/up:prompt` bootstraps agent worktrees from PROMPT.md
+After editing `.claude-plugin/marketplace.json` or plugin manifests:
 
-**design** - Task creation: `/design <feature>` runs interactive design session creating `tasks/{PREFIX}-{NNN}/TASK.md` with user stories and acceptance criteria. `/design:init` scaffolds `tasks/` directory. `/design:digest` parses existing docs into tasks.
+```bash
+python3 scripts/generate-codex-marketplace.py
+python3 scripts/generate-codex-marketplace.py --check
+```
 
-**backlog** - Task execution: `/backlog` shows status table from INDEX.md. `/backlog:launch <ID>` creates git worktree + PROMPT.md for agent execution. `/backlog:review <ID>` transitions to review mode. `/backlog:complete <ID>` merges and archives. Includes Stop hook that gates exit on `<promise>TASK_COMPLETE</promise>` tags.
+See `docs/MULTI_HARNESS.md`.
+
+## Core workflow plugin
+
+**up** - Context bootstrap: `/up` reads CLAUDE.md, `/up:plan` adds PRD.md, `/up:prompt` loads PROMPT.md. Task design/backlog loop plugins (`design`, `backlog`, `pm`) are **not** listed in the marketplace; harness-native loops replace them.
 
 ## Plugin Component Formats
 
@@ -79,7 +90,7 @@ The Stop hook (`plugins/backlog/hooks/stop-hook.sh`) checks for `.claude/backlog
 
 ## OpenCode Compatibility
 
-Each plugin has an `.opencode/` directory mirroring its commands/agents/skills for OpenCode installation. Command names differ: Claude Code uses `/backlog:launch` while OpenCode uses `/backlog-launch`. The `install-opencode.sh` script copies files to `~/.config/opencode/`.
+Each plugin has an `.opencode/` directory mirroring its commands/agents/skills for OpenCode installation. Command names may differ slightly by harness (e.g. `plugin:command` vs `plugin-command`). The `install-opencode.sh` script copies files to `~/.config/opencode/`.
 
 ## Submodule Management
 

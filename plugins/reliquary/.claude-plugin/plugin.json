@@ -1,0 +1,10 @@
+{
+  "name": "reliquary",
+  "version": "0.1.0",
+  "description": "Progressive disclosure skills for Reliquary - maturity-based incentive system with ERC-721 Relic NFTs, level curves, and rolling rewarders",
+  "author": {
+    "name": "Byte Masons"
+  },
+  "keywords": ["reliquary", "defi", "skills", "ethereum"],
+  "license": "MIT"
+}

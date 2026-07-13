@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "permit2",
+  "description": "Progressive disclosure skills for Uniswap Permit2 - signature-based token approvals, AllowanceTransfer, SignatureTransfer, nonce management, and wagmi integration",
+  "version": "0.1.0"
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "reliquary",
+  "description": "Progressive disclosure skills for Reliquary - maturity-based incentive system with ERC-721 Relic NFTs, level curves, and rolling rewarders",
+  "version": "0.1.0"
+}

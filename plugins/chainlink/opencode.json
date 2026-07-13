@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "chainlink",
+  "description": "Progressive disclosure skills for Chainlink - VRF architecture and local testing with Chainlink Local",
+  "version": "0.1.0"
+}

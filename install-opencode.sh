@@ -40,22 +40,28 @@ ALL_PLUGINS=(
     "aave-v4"
     "aerodrome"
     "aerodrome-slipstream"
-    "backlog"
     "balancer-v3"
     "boardgame-io"
+    "chainlink"
     "compound-v3-comet"
     "crane"
-    "design"
+    "defi-ui-testing"
     "euler-lending"
     "foundry"
     "homunculus"
-    "pm"
+    "metamask"
+    "permit2"
+    "playwright"
     "qmd"
+    "reliquary"
     "resupply"
+    "synpress"
+    "tevm"
     "uniswap-v3"
     "uniswap-v4"
     "up"
     "voltaire-effect"
+    "wagmi"
 )
 
 print_header() {
@@ -276,16 +282,20 @@ Usage:
 
 Examples:
   ./install-opencode.sh                        # Install everything
-  ./install-opencode.sh up backlog design      # Install workflow plugins
+  ./install-opencode.sh up                     # Install context bootstrap
   ./install-opencode.sh foundry crane          # Install Solidity plugins
   ./install-opencode.sh aave-v3 balancer-v3    # Install DeFi protocol skills
 
 Available plugins:
-  Workflow:    up, design, backlog, homunculus
+  Workflow:    up, homunculus
   Solidity:    foundry, crane
   Games:       boardgame-io
   DeFi:        balancer-v3, aave-v3, aave-v4, aerodrome, aerodrome-slipstream,
-               compound-v3-comet, euler-lending, uniswap-v3, uniswap-v4, resupply
+               chainlink, compound-v3-comet, euler-lending, permit2, reliquary,
+               uniswap-v3, uniswap-v4, resupply
+  TypeScript:  tevm, voltaire-effect, wagmi
+  UI E2E:      playwright, synpress, metamask, defi-ui-testing
+  Other:       qmd
 
 Setup:
   git clone https://github.com/cyotee/cyotee-claude-plugins.git

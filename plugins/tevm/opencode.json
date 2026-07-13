@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "tevm",
+  "description": "Progressive disclosure skills for Tevm - lightweight browser EVM for local testing, contract debugging, account management, and fork testing",
+  "version": "0.1.0"
+}

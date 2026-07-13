@@ -1,0 +1,11 @@
+{
+  "name": "permit2",
+  "version": "0.1.0",
+  "description": "Progressive disclosure skills for Uniswap Permit2 - signature-based token approvals, AllowanceTransfer, SignatureTransfer, nonce management, and wagmi integration",
+  "author": {
+    "name": "Uniswap",
+    "url": "https://github.com/Uniswap/permit2"
+  },
+  "keywords": ["permit2", "defi", "skills", "ethereum"],
+  "license": "MIT"
+}

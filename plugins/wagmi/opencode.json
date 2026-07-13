@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "name": "wagmi",
+  "description": "Progressive disclosure skills for wagmi - React and vanilla JS Ethereum hooks for wallet connections, contract reads/writes, transports, and connectors",
+  "version": "0.1.0"
+}

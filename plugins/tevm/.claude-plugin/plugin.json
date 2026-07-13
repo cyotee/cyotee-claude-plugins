@@ -1,0 +1,11 @@
+{
+  "name": "tevm",
+  "version": "0.1.0",
+  "description": "Progressive disclosure skills for Tevm - lightweight browser EVM for local testing, contract debugging, account management, and fork testing",
+  "author": {
+    "name": "tevm",
+    "url": "https://tevm.sh"
+  },
+  "keywords": ["tevm", "defi", "skills", "ethereum"],
+  "license": "MIT"
+}

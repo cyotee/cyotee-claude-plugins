@@ -1,606 +1,459 @@
 {
   "name": "cyotee",
-  "owner": {
-    "name": "cyotee"
+  "interface": {
+    "displayName": "cyotee",
+    "shortDescription": "cyotee's development workflow and DeFi protocol skills for Claude Code and OpenCode — Crane, Foundry, Uniswap, Balancer, Aave, Aerodrome, Permit2, wagmi, Tevm, …"
   },
   "metadata": {
     "description": "cyotee's development workflow and DeFi protocol skills for Claude Code and OpenCode — Crane, Foundry, Uniswap, Balancer, Aave, Aerodrome, Permit2, wagmi, Tevm, Playwright, Synpress, MetaMask, and DeFi UI E2E testing",
-    "version": "3.2.0"
+    "version": "3.2.0",
+    "generatedFrom": ".claude-plugin/marketplace.json",
+    "generator": "scripts/generate-codex-marketplace.py",
+    "notes": "Claude Code is the source of truth. Skills (SKILL.md) are portable. Hooks and Claude-specific automation may not fully apply on Codex."
   },
   "plugins": [
     {
       "name": "up",
       "source": {
-        "source": "github",
-        "repo": "cyotee/cyotee-claude-plugin-up"
+        "source": "local",
+        "path": "./plugins/up"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
       "description": "Context bootstrap commands for CLAUDE.md, PRD.md, and PROMPT.md with mode-aware agent support",
       "version": "3.0.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "productivity",
-      "tags": [
-        "workflow",
-        "context",
-        "claude-md",
-        "bootstrap",
-        "agent"
-      ]
+      }
     },
     {
       "name": "foundry",
       "source": {
-        "source": "github",
-        "repo": "cyotee/foundry-skills"
+        "source": "local",
+        "path": "./plugins/foundry"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Skills and Solidity LSP for Foundry - forge, cast, anvil, signing cheatcodes, and Supersim Superchain local testing",
       "version": "1.2.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "ethereum",
-        "foundry",
-        "forge",
-        "cast",
-        "anvil",
-        "smart-contracts",
-        "testing"
-      ]
+      }
     },
     {
       "name": "boardgame-io",
       "source": {
-        "source": "github",
-        "repo": "cyotee/cyotee-claude-plugin-boardgameIO"
+        "source": "local",
+        "path": "./plugins/boardgame-io"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Skills for boardgame.io - the open source game engine for turn-based games",
       "version": "1.0.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "boardgame",
-        "game-development",
-        "javascript",
-        "react",
-        "multiplayer",
-        "turn-based"
-      ]
+      }
     },
     {
       "name": "crane",
       "source": {
-        "source": "github",
-        "repo": "cyotee/cyotee-claude-plugin-crane"
+        "source": "local",
+        "path": "./plugins/crane"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Development tools and guidance for the Crane Diamond framework - architecture patterns, testing, deployment, code style, NatSpec, DeFi integrations, and Chainlink VRF",
       "version": "0.2.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "diamond",
-        "erc2535",
-        "defi",
-        "foundry",
-        "smart-contracts",
-        "testing"
-      ]
+      }
     },
     {
       "name": "homunculus",
       "source": {
-        "source": "github",
-        "repo": "cyotee/homunculus"
+        "source": "local",
+        "path": "./plugins/homunculus"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
       "description": "A Claude Code plugin that's alive. Birth it, bond to it, build with it. Observes patterns, learns instincts, evolves real plugin capabilities.",
       "version": "2.5.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "productivity",
-      "tags": [
-        "ai",
-        "evolution",
-        "living",
-        "homunculus",
-        "self-evolving",
-        "instincts",
-        "cross-project"
-      ]
+      }
     },
     {
       "name": "balancer-v3",
       "source": {
-        "source": "github",
-        "repo": "cyotee/balancer-v3-skill"
+        "source": "local",
+        "path": "./plugins/balancer-v3"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Balancer V3 protocol - Vault architecture, pool types (Weighted, Stable, Gyro, CoW, RECLAMM), Router, and Hooks system",
       "version": "0.2.0",
       "author": {
         "name": "Balancer Labs"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "balancer",
-        "defi",
-        "amm",
-        "vault",
-        "weighted-pool",
-        "stable-pool",
-        "hooks",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "aave-v3",
       "source": {
-        "source": "github",
-        "repo": "cyotee/aave-v3-skill"
+        "source": "local",
+        "path": "./plugins/aave-v3"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Aave V3 protocol - Pool operations, aTokens, debt tokens, interest rates, eModes, flash loans, and StataToken (ERC-4626)",
       "version": "0.1.1",
       "author": {
         "name": "Aave"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "aave",
-        "defi",
-        "lending",
-        "borrowing",
-        "flash-loans",
-        "atokens",
-        "erc4626",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "aave-v4",
       "source": {
-        "source": "github",
-        "repo": "cyotee/aave-V4-skill"
+        "source": "local",
+        "path": "./plugins/aave-v4"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Aave V4 protocol - Hub-and-Spoke architecture, Risk Premium, Dynamic Risk Configuration, Target HF liquidation, Position Managers",
       "version": "0.1.0",
       "author": {
         "name": "Aave"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "aave",
-        "defi",
-        "lending",
-        "borrowing",
-        "hub-spoke",
-        "risk-premium",
-        "liquidation",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "aerodrome",
       "source": {
-        "source": "github",
-        "repo": "cyotee/aerodrome-skill"
+        "source": "local",
+        "path": "./plugins/aerodrome"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Aerodrome protocol - ve(3,3) AMM on Base with pools, voting escrow, gauges, emissions, and rewards",
       "version": "0.1.0",
       "author": {
         "name": "Aerodrome Finance"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "aerodrome",
-        "velodrome",
-        "defi",
-        "amm",
-        "ve33",
-        "voting-escrow",
-        "gauge",
-        "emissions",
-        "base",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "compound-v3-comet",
       "source": {
-        "source": "github",
-        "repo": "cyotee/compound-V3-comet-skill"
+        "source": "local",
+        "path": "./plugins/compound-v3-comet"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Compound V3 Comet protocol - monolithic money market with single borrowable asset, collateral factors, kinked interest rates, absorb liquidation, rewards, and governance",
       "version": "0.1.0",
       "author": {
         "name": "Compound Labs"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "compound",
-        "comet",
-        "defi",
-        "lending",
-        "borrowing",
-        "collateral",
-        "liquidation",
-        "interest-rates",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "euler-lending",
       "source": {
-        "source": "github",
-        "repo": "cyotee/euler-lending-skill"
+        "source": "local",
+        "path": "./plugins/euler-lending"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Euler Lending protocol - Ethereum Vault Connector (EVC), Euler Vault Kit (EVK), modular oracle system, and periphery infrastructure for composable lending",
       "version": "0.1.0",
       "author": {
         "name": "Euler Labs"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "euler",
-        "evc",
-        "evk",
-        "defi",
-        "lending",
-        "borrowing",
-        "erc4626",
-        "vault",
-        "oracle",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "aerodrome-slipstream",
       "source": {
-        "source": "github",
-        "repo": "cyotee/aerodrome-V2-slipstream-skill"
+        "source": "local",
+        "path": "./plugins/aerodrome-slipstream"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Aerodrome V2 Slipstream - concentrated liquidity AMM on Base with tick-based pricing, NFT positions, gauge rewards, and TWAP oracles",
       "version": "0.1.0",
       "author": {
         "name": "Aerodrome Finance"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "aerodrome",
-        "slipstream",
-        "concentrated-liquidity",
-        "defi",
-        "amm",
-        "uniswap-v3",
-        "ticks",
-        "nft-positions",
-        "gauge",
-        "base",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "uniswap-v3",
       "source": {
-        "source": "github",
-        "repo": "cyotee/uniswap-V3-skill"
+        "source": "local",
+        "path": "./plugins/uniswap-v3"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Uniswap V3 protocol - concentrated liquidity AMM, tick-based pricing, NFT position management, multi-hop swaps, and TWAP oracles",
       "version": "0.1.0",
       "author": {
         "name": "Uniswap Labs"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "uniswap",
-        "concentrated-liquidity",
-        "defi",
-        "amm",
-        "nft-positions",
-        "twap-oracle",
-        "swap-router",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "uniswap-v4",
       "source": {
-        "source": "github",
-        "repo": "cyotee/uniswap-V4-skill"
+        "source": "local",
+        "path": "./plugins/uniswap-v4"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Uniswap V4 protocol - singleton PoolManager architecture, hooks system, flash accounting with transient storage, ERC6909 LP tokens, and dynamic fees",
       "version": "0.1.0",
       "author": {
         "name": "Uniswap Labs"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "uniswap",
-        "hooks",
-        "singleton",
-        "flash-accounting",
-        "transient-storage",
-        "erc6909",
-        "defi",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "resupply",
       "source": {
-        "source": "github",
-        "repo": "cyotee/resupply-skill"
+        "source": "local",
+        "path": "./plugins/resupply"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Resupply protocol - CDP-based stablecoin lending with reUSD, ERC4626 collateral, liquidations, redemptions, insurance pool, governance staking, and multi-reward emissions",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "resupply",
-        "cdp",
-        "stablecoin",
-        "defi",
-        "lending",
-        "erc4626",
-        "liquidation",
-        "governance",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "qmd",
       "source": {
-        "source": "github",
-        "repo": "cyotee/claude-qmd"
+        "source": "local",
+        "path": "./plugins/qmd"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
       "description": "Local semantic search for documentation using QMD - indexes markdown files with BM25, vector embeddings, and hybrid search with LLM reranking. MCP server integration included.",
       "version": "1.0.1",
       "author": {
         "name": "cyotee",
         "upstream": "Tobi Lutke"
-      },
-      "category": "productivity",
-      "tags": [
-        "search",
-        "semantic",
-        "documentation",
-        "rag",
-        "mcp",
-        "embeddings",
-        "local",
-        "indexing"
-      ]
+      }
     },
     {
       "name": "voltaire-effect",
       "source": {
-        "source": "github",
-        "repo": "cyotee/voltaire-skill"
+        "source": "local",
+        "path": "./plugins/voltaire-effect"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for voltaire-effect - Effect.ts integration for Voltaire Ethereum primitives with typed errors, dependency injection, providers, signers, and crypto",
       "version": "0.2.0",
       "author": {
         "name": "tevm"
-      },
-      "category": "development",
-      "tags": [
-        "typescript",
-        "effect",
-        "voltaire",
-        "ethereum",
-        "branded-types",
-        "dependency-injection",
-        "typed-errors",
-        "crypto",
-        "web3"
-      ]
+      }
     },
     {
       "name": "permit2",
-      "source": "./plugins/permit2",
+      "source": {
+        "source": "local",
+        "path": "./plugins/permit2"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Uniswap Permit2 - signature-based token approvals, AllowanceTransfer, SignatureTransfer, nonce management, and wagmi integration",
       "version": "0.1.0",
       "author": {
         "name": "Uniswap"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "permit2",
-        "uniswap",
-        "defi",
-        "approvals",
-        "eip712",
-        "signatures",
-        "wagmi",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "tevm",
-      "source": "./plugins/tevm",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tevm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Tevm - lightweight browser EVM for local testing, contract debugging, account management, and fork testing",
       "version": "0.1.0",
       "author": {
         "name": "tevm"
-      },
-      "category": "development",
-      "tags": [
-        "typescript",
-        "tevm",
-        "evm",
-        "testing",
-        "ethereum",
-        "browser",
-        "fork",
-        "debugging"
-      ]
+      }
     },
     {
       "name": "wagmi",
-      "source": "./plugins/wagmi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wagmi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for wagmi - React and vanilla JS Ethereum hooks for wallet connections, contract reads/writes, transports, and connectors",
       "version": "0.1.0",
       "author": {
         "name": "wagmi"
-      },
-      "category": "development",
-      "tags": [
-        "typescript",
-        "wagmi",
-        "react",
-        "viem",
-        "ethereum",
-        "wallet",
-        "hooks",
-        "web3"
-      ]
+      }
     },
     {
       "name": "chainlink",
-      "source": "./plugins/chainlink",
+      "source": {
+        "source": "local",
+        "path": "./plugins/chainlink"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Chainlink - VRF architecture and local testing with Chainlink Local",
       "version": "0.1.0",
       "author": {
         "name": "Chainlink"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "chainlink",
-        "vrf",
-        "oracle",
-        "defi",
-        "randomness",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "reliquary",
-      "source": "./plugins/reliquary",
+      "source": {
+        "source": "local",
+        "path": "./plugins/reliquary"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Reliquary - maturity-based incentive system with ERC-721 Relic NFTs, level curves, and rolling rewarders",
       "version": "0.1.0",
       "author": {
         "name": "Byte Masons"
-      },
-      "category": "development",
-      "tags": [
-        "solidity",
-        "reliquary",
-        "defi",
-        "incentives",
-        "staking",
-        "nft",
-        "maturity",
-        "smart-contracts"
-      ]
+      }
     },
     {
       "name": "playwright",
       "source": {
-        "source": "github",
-        "repo": "cyotee/playwright-skill"
+        "source": "local",
+        "path": "./plugins/playwright"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Playwright - browser E2E testing, fixtures, config, and multi-service webServer orchestration for dApp testing",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "playwright",
-        "e2e",
-        "testing",
-        "browser",
-        "defi",
-        "dapp",
-        "fixtures"
-      ]
+      }
     },
     {
       "name": "synpress",
       "source": {
-        "source": "github",
-        "repo": "cyotee/synpress-skill"
+        "source": "local",
+        "path": "./plugins/synpress"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for Synpress - Web3 E2E with Playwright, MetaMask wallet setup caching, and dApp wallet automation",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "synpress",
-        "metamask",
-        "playwright",
-        "web3",
-        "e2e",
-        "testing",
-        "wallet"
-      ]
+      }
     },
     {
       "name": "metamask",
       "source": {
-        "source": "github",
-        "repo": "cyotee/metamask-skill"
+        "source": "local",
+        "path": "./plugins/metamask"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "Progressive disclosure skills for MetaMask in dApp E2E testing - connection flows, networks, accounts, transactions, and token approvals",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "metamask",
-        "wallet",
-        "ethereum",
-        "e2e",
-        "testing",
-        "web3",
-        "approvals"
-      ]
+      }
     },
     {
       "name": "defi-ui-testing",
       "source": {
-        "source": "github",
-        "repo": "cyotee/defi-ui-testing-skill"
+        "source": "local",
+        "path": "./plugins/defi-ui-testing"
       },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
       "description": "How to E2E test DeFi UIs — Method A Wagmi mock connector + Anvil, Method B Synpress + MetaMask. Patterns for connect, approve, swap, lend, liquidate.",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
-      },
-      "category": "development",
-      "tags": [
-        "defi",
-        "e2e",
-        "ui-testing",
-        "playwright",
-        "synpress",
-        "metamask",
-        "wagmi",
-        "anvil"
-      ]
+      }
     }
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "name": "wagmi",
+  "version": "0.1.0",
+  "description": "Progressive disclosure skills for wagmi - React and vanilla JS Ethereum hooks for wallet connections, contract reads/writes, transports, and connectors",
+  "author": {
+    "name": "wagmi",
+    "url": "https://wagmi.sh"
+  },
+  "keywords": ["wagmi", "defi", "skills", "ethereum"],
+  "license": "MIT"
+}

@@ -1,6 +1,8 @@
 # cyotee-claude-plugins
 
-A Claude Code plugin marketplace providing development workflow commands for managing complex projects with directory-based task management, git worktrees, and autonomous agent execution.
+A multi-harness plugin marketplace: **Agent Skills** and workflow plugins for Claude Code, Codex CLI, Grok Build, and OpenCode. Claude-format catalog is the source of truth; Codex artifacts are generated.
+
+Portable unit: `skills/*/SKILL.md` ([agentskills.io](https://agentskills.io)). Hooks and some commands remain harness-specific — see [docs/MULTI_HARNESS.md](docs/MULTI_HARNESS.md).
 
 ## Installation
 
@@ -12,11 +14,42 @@ A Claude Code plugin marketplace providing development workflow commands for man
 
 # Install individual plugins
 /plugin install up@cyotee
-/plugin install design@cyotee
-/plugin install backlog@cyotee
+/plugin install crane@cyotee
+/plugin install defi-ui-testing@cyotee
 
 # Or browse available plugins
 /plugin
+```
+
+### Codex CLI
+
+Codex reads the dual-ship registry at `.agents/plugins/marketplace.json` and each plugin’s `.codex-plugin/plugin.json` (generated from Claude SoT).
+
+```bash
+git clone --recurse-submodules https://github.com/cyotee/cyotee-claude-plugins.git
+cd cyotee-claude-plugins
+git submodule update --init --recursive
+
+codex plugin marketplace add .
+# after push to GitHub:
+# codex plugin marketplace add cyotee/cyotee-claude-plugins
+
+# Then in Codex: /plugins → install crane, foundry, playwright, etc.
+```
+
+Regenerate Codex artifacts after editing the Claude catalog:
+
+```bash
+python3 scripts/generate-codex-marketplace.py
+python3 scripts/generate-codex-marketplace.py --check
+```
+
+### Grok Build
+
+```bash
+grok plugin marketplace add cyotee/cyotee-claude-plugins
+# or a local checkout
+grok plugin marketplace add /path/to/cyotee-claude-plugins
 ```
 
 ### OpenCode
@@ -25,26 +58,22 @@ These plugins are also compatible with [OpenCode](https://opencode.ai/). To inst
 
 ```bash
 # Clone the repository
-git clone https://github.com/cyotee/cyotee-claude-plugins.git
+git clone --recurse-submodules https://github.com/cyotee/cyotee-claude-plugins.git
 cd cyotee-claude-plugins
+git submodule update --init --recursive
 
 # Install all plugins
 ./install-opencode.sh
 
 # Or install specific plugins
 ./install-opencode.sh up
-./install-opencode.sh backlog
-./install-opencode.sh design
+./install-opencode.sh defi-ui-testing playwright synpress
 
 # To uninstall
 ./install-opencode.sh --uninstall
 ```
 
-**Note:** Command names differ slightly in OpenCode due to namespace handling:
-- Claude Code: `/backlog:launch` → OpenCode: `/backlog-launch`
-- Claude Code: `/design:init` → OpenCode: `/design-init`
-
-See [OPENCODE_PLUGINS.md](OPENCODE_PLUGINS.md) for full compatibility details.
+See [OPENCODE_PLUGINS.md](OPENCODE_PLUGINS.md) and [docs/MULTI_HARNESS.md](docs/MULTI_HARNESS.md) for full compatibility details.
 
 ## Plugins
 
@@ -59,142 +88,54 @@ Commands for loading project context from documentation files.
 | `/up:prd` | Alias for `/up:plan` |
 | `/up:prompt` | Read CLAUDE.md + PROMPT.md for agent worktree execution |
 
-### design - Task Design
+### Crane & Solidity tooling
 
-Interactive design sessions for creating and refining tasks with user stories.
+| Plugin | Description |
+|--------|-------------|
+| `crane` | Diamond (ERC-2535) framework — architecture, testing, deployment, DeFi integrations, Chainlink VRF |
+| `foundry` | Forge, cast, anvil, signing cheatcodes, Supersim Superchain local testing |
 
-| Command | Description |
-|---------|-------------|
-| `/design <feature>` | Start interactive design session to create a new task |
-| `/design:task <feature>` | Same as `/design` - create task in tasks/ directory |
-| `/design:init` | Initialize tasks/ directory structure in a repository |
-| `/design:prd` | Interactive PRD creation for project-level requirements |
-| `/design:review` | Review all tasks for completeness and quality |
-| `/design:review <N>` | Review and refine a specific task |
+### DeFi protocol skills
 
-### backlog - Task Management
+| Plugin | Description |
+|--------|-------------|
+| `aave-v3` / `aave-v4` | Aave lending protocol |
+| `aerodrome` / `aerodrome-slipstream` | Aerodrome ve(3,3) AMM and concentrated liquidity |
+| `balancer-v3` | Balancer V3 Vault, pools, hooks |
+| `chainlink` | Chainlink VRF and local testing |
+| `compound-v3-comet` | Compound V3 Comet money market |
+| `euler-lending` | Euler EVC/EVK lending |
+| `permit2` | Uniswap Permit2 signature approvals |
+| `reliquary` | Maturity-based Relic NFT incentives |
+| `resupply` | Resupply protocol |
+| `uniswap-v3` / `uniswap-v4` | Uniswap concentrated liquidity and hooks |
 
-Manage your tasks/ directory backlog and git worktrees.
+### TypeScript / frontend Ethereum
 
-| Command | Description |
-|---------|-------------|
-| `/backlog` | Display task status summary table |
-| `/backlog:status` | Same as `/backlog` - show all tasks |
-| `/backlog:read <ID>` | View detailed task information (PRD, progress, review) |
-| `/backlog:launch <ID>` | Create git worktree and launch agent for task |
-| `/backlog:complete [ID]` | Rebase, merge to main, and prepare for review |
-| `/backlog:prune [ID]` | Archive completed/reviewed tasks |
+| Plugin | Description |
+|--------|-------------|
+| `tevm` | Browser EVM for local testing and debugging |
+| `voltaire-effect` | Effect.ts + Voltaire typed Ethereum primitives |
+| `wagmi` | React/vanilla Ethereum hooks and connectors |
 
-## Task ID Format
+### DeFi UI E2E testing
 
-Tasks use layer-prefixed IDs. Layers are detected dynamically:
+| Plugin | Description |
+|--------|-------------|
+| `playwright` | Browser E2E runner, fixtures, webServer orchestration |
+| `synpress` | Web3 E2E with MetaMask wallet setup caching |
+| `metamask` | Wallet domain knowledge: networks, txs, approvals |
+| `defi-ui-testing` | Method A (Wagmi mock + Anvil) and Method B (Synpress + MetaMask) playbooks |
 
-1. Scan for `tasks/` directories in the repository
-2. Read `tasks/INDEX.md` for layer name and prefix
-3. If not found, auto-detect from directory/repo name
-4. Prefix is first letter of layer name (uppercase)
-
-Examples: `P-5`, `M-3`, `L-1` (prefixes depend on your project names)
-
-## Workflow
-
-These plugins support a structured development workflow:
-
-```
-1. /up                    # Load project context
-2. /design:init           # Create tasks/ structure (first time)
-3. /design <feature>      # Design a new feature with user stories
-4. /backlog               # View all tasks
-5. /backlog:launch P-5    # Create worktree for task P-5
-6. (work in worktree)     # Agent executes task
-7. /backlog:complete P-5  # Rebase and request review
-8. /backlog:prune P-5     # Archive after review passes
-```
-
-### Agent Worktree Execution
-
-For autonomous agent execution in worktrees:
-
-```bash
-# After /backlog:launch creates the worktree
-cd <worktree-path>
-claude --dangerously-skip-permissions
-
-# In Claude, start the agent loop
-/ralph-loop:ralph-loop "Read PROMPT.md and execute the task." --completion-promise "TASK_COMPLETE"
-```
-
-## Task Directory Structure
-
-Each task is a directory containing:
-
-```
-tasks/
-├── [P]-1/
-│   ├── PRD.md        # Requirements and acceptance criteria
-│   ├── PROGRESS.md   # Reverse-chronological progress log
-│   └── REVIEW.md     # Review findings and verdict
-├── [P]-2/
-│   └── ...
-├── archive/          # Completed tasks moved here
-└── INDEX.md          # Task index with status overview
-```
-
-## Related Files
+## Related project files
 
 | File | Purpose |
 |------|---------|
-| `CLAUDE.md` | Project documentation, architecture, and conventions |
-| `PRD.md` | Global product requirements document |
-| `tasks/INDEX.md` | Task index with status table |
-| `tasks/[ID]/PRD.md` | Task-specific requirements and acceptance criteria |
-| `tasks/[ID]/PROGRESS.md` | Agent progress log (reverse chronological) |
-| `tasks/[ID]/REVIEW.md` | Review findings and verdict |
-| `PROMPT.md` | Agent task instructions (created in worktrees) |
+| `CLAUDE.md` / `AGENTS.md` | Project documentation, architecture, and conventions |
+| `PRD.md` | Product requirements (when present) |
+| `PROMPT.md` | Focused agent instructions (when present) |
 
-## Task Lifecycle
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  /design        │ ──▶ │  tasks/[ID]/     │ ──▶ │  🆕 pending     │
-│  <feature>      │     │  PRD.md created  │     │                 │
-└─────────────────┘     └──────────────────┘     └────────┬────────┘
-                                                          │
-                        ┌──────────────────┐              ▼
-                        │  Agent Working   │     ┌─────────────────┐
-                        │  in Worktree     │ ◀── │  /backlog:      │
-                        │  🚀 in_progress  │     │  launch <ID>    │
-                        └────────┬─────────┘     └─────────────────┘
-                                 │
-                                 ▼
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Different      │ ◀── │  /backlog:       │ ◀── │  🚀 in_progress │
-│  Agent Reviews  │     │  complete <ID>   │     │  Work done      │
-│  📋 review      │     │  📋 review       │     │                 │
-└────────┬────────┘     └──────────────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐     ┌──────────────────┐
-│  /backlog:      │ ──▶ │  tasks/archive/  │
-│  prune <ID>     │     │  ✅ complete     │
-└─────────────────┘     └──────────────────┘
-```
-
-## Task States
-
-| State | Icon | Description |
-|-------|------|-------------|
-| pending | 🆕 | Ready to start, dependencies met |
-| in_progress | 🚀 | Agent actively working |
-| review | 📋 | Work complete, awaiting review |
-| complete | ✅ | Reviewed and approved |
-| blocked | ❌ | Waiting on dependencies |
-
-## Requirements
-
-- **git-wt** or **wt-create.sh**: Git worktree helper (for `/backlog:launch`)
-- **CLAUDE.md**: Project documentation file
-- **tasks/**: Task directory (created by `/design:init` if missing)
+Agent loops and task orchestration are left to each harness’s built-in features (Claude, Codex, Grok, OpenCode). This marketplace focuses on **skills and domain plugins**.
 
 ## License
 
