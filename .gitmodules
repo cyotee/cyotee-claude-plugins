@@ -61,3 +61,6 @@
 [submodule "plugins/defi-ui-testing"]
 	path = plugins/defi-ui-testing
 	url = https://github.com/cyotee/defi-ui-testing-skill.git
+[submodule "plugins/foundry-agent"]
+	path = plugins/foundry-agent
+	url = https://github.com/cyotee/foundry-agent-skills.git

@@ -4,7 +4,7 @@
     "name": "cyotee"
   },
   "metadata": {
-    "description": "cyotee's development workflow and DeFi protocol skills for Claude Code and OpenCode — Crane, Foundry, Uniswap, Balancer, Aave, Aerodrome, Permit2, wagmi, Tevm, Playwright, Synpress, MetaMask, and DeFi UI E2E testing",
+    "description": "cyotee's development workflow and DeFi protocol skills for Claude Code and OpenCode \u2014 Crane, Foundry, Uniswap, Balancer, Aave, Aerodrome, Permit2, wagmi, Tevm, Playwright, Synpress, MetaMask, and DeFi UI E2E testing",
     "version": "3.2.0"
   },
   "plugins": [
@@ -34,8 +34,8 @@
         "source": "github",
         "repo": "cyotee/foundry-skills"
       },
-      "description": "Skills and Solidity LSP for Foundry - forge, cast, anvil, signing cheatcodes, and Supersim Superchain local testing",
-      "version": "1.2.0",
+      "description": "Foundry developer skills: forge testing, fuzzing, deployment scripts, project setup, signing cheatcodes, and Supersim (cast/anvil: foundry-agent)",
+      "version": "1.3.0",
       "author": {
         "name": "cyotee"
       },
@@ -45,10 +45,31 @@
         "ethereum",
         "foundry",
         "forge",
-        "cast",
-        "anvil",
         "smart-contracts",
-        "testing"
+        "testing",
+        "deployment"
+      ]
+    },
+    {
+      "name": "foundry-agent",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/foundry-agent-skills"
+      },
+      "description": "Foundry cast/anvil runtime for AI agents: RPC reads/writes, fork rehearsal, multi-step forge scripts, and safety gates",
+      "version": "0.1.0",
+      "author": {
+        "name": "cyotee"
+      },
+      "category": "development",
+      "tags": [
+        "foundry",
+        "cast",
+        "forge",
+        "anvil",
+        "rpc",
+        "agent",
+        "evm"
       ]
     },
     {
@@ -585,7 +606,7 @@
         "source": "github",
         "repo": "cyotee/defi-ui-testing-skill"
       },
-      "description": "How to E2E test DeFi UIs — Method A Wagmi mock connector + Anvil, Method B Synpress + MetaMask. Patterns for connect, approve, swap, lend, liquidate.",
+      "description": "How to E2E test DeFi UIs \u2014 Method A Wagmi mock connector + Anvil, Method B Synpress + MetaMask. Patterns for connect, approve, swap, lend, liquidate.",
       "version": "0.1.0",
       "author": {
         "name": "cyotee"
