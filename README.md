@@ -2,7 +2,13 @@
 
 A multi-harness plugin marketplace: **Agent Skills** and workflow plugins for Claude Code, Codex CLI, Grok Build, and OpenCode. Claude-format catalog is the source of truth; Codex artifacts are generated.
 
+**Audience:** developers and agents **building and testing** smart contracts (architecture, Foundry, protocol deep-dives). For on-chain *operations* (cast/Bankr runbooks), use sibling marketplace **[defi-agent-skills](https://github.com/cyotee/defi-agent-skills)**.
+
+**Flagship:** the **`crane`** plugin for the [Crane](https://github.com/cyotee/crane) Diamond-first (ERC-2535) Solidity framework — docs at [cyotee.github.io/crane](https://cyotee.github.io/crane/).
+
 Portable unit: `skills/*/SKILL.md` ([agentskills.io](https://agentskills.io)). Hooks and some commands remain harness-specific — see [docs/MULTI_HARNESS.md](docs/MULTI_HARNESS.md).
+
+> **Disclaimer:** Protocol skills document third-party systems (Aave, Uniswap, Balancer, etc.) for engineering education. They are **not** official products of those teams unless stated otherwise.
 
 ## Installation
 
@@ -127,16 +133,16 @@ Commands for loading project context from documentation files.
 | `metamask` | Wallet domain knowledge: networks, txs, approvals |
 | `defi-ui-testing` | Method A (Wagmi mock + Anvil) and Method B (Synpress + MetaMask) playbooks |
 
-## Related project files
+## Related
 
-| File | Purpose |
-|------|---------|
-| `CLAUDE.md` / `AGENTS.md` | Project documentation, architecture, and conventions |
-| `PRD.md` | Product requirements (when present) |
-| `PROMPT.md` | Focused agent instructions (when present) |
+| Resource | Link |
+|----------|------|
+| Crane framework | [github.com/cyotee/crane](https://github.com/cyotee/crane) · [docs](https://cyotee.github.io/crane/) |
+| Ops marketplace | [defi-agent-skills](https://github.com/cyotee/defi-agent-skills) |
+| Multi-harness notes | [docs/MULTI_HARNESS.md](docs/MULTI_HARNESS.md) |
 
 Agent loops and task orchestration are left to each harness’s built-in features (Claude, Codex, Grok, OpenCode). This marketplace focuses on **skills and domain plugins**.
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). Individual plugins may note additional terms in their manifests.
