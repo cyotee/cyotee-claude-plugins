@@ -637,6 +637,31 @@
         "wagmi",
         "anvil"
       ]
+    },
+    {
+      "name": "bounty-methodology",
+      "source": "./plugins/bounty-methodology",
+      "description": "Cross-cutting Immunefi/contest methodology + integration skills (scope, custody, async vaults, CCTP, bridges)"
+    },
+    {
+      "name": "0x-settler",
+      "source": "./plugins/0x-settler",
+      "description": "0x Settler settlement security and swap integration skills"
+    },
+    {
+      "name": "fluid-vault",
+      "source": "./plugins/fluid-vault",
+      "description": "Instadapp Fluid vault/liquidity review skills"
+    },
+    {
+      "name": "defisaver",
+      "source": "./plugins/defisaver",
+      "description": "DeFi Saver recipe executor and transient store skills"
+    },
+    {
+      "name": "gearbox",
+      "source": "./plugins/gearbox",
+      "description": "Gearbox V3 credit-account adapter integration skills"
     }
   ]
 }

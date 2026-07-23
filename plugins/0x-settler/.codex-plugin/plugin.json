@@ -1,0 +1,13 @@
+{
+  "name": "0x-settler",
+  "version": "0.1.0",
+  "description": "Skills for reviewing 0x Settler settlement multicalls, Permit2/AllowanceHolder payment auth, and VIP adapters.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "0x-settler",
+    "shortDescription": "Skills for reviewing 0x Settler settlement multicalls, Permit2/AllowanceHolder payment auth, and VIP adapters.",
+    "longDescription": "Skills for reviewing 0x Settler settlement multicalls, Permit2/AllowanceHolder payment auth, and VIP adapters.",
+    "category": "Productivity",
+    "developerName": "cyotee"
+  }
+}

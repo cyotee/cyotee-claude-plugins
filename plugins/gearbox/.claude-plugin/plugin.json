@@ -1,0 +1,5 @@
+{
+  "name": "gearbox",
+  "description": "Skills for integrating and reviewing Gearbox V3 credit accounts, adapters, oracles, and liquidation bots.",
+  "version": "0.1.0"
+}

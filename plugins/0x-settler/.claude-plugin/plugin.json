@@ -1,0 +1,5 @@
+{
+  "name": "0x-settler",
+  "description": "Skills for reviewing 0x Settler settlement multicalls, Permit2/AllowanceHolder payment auth, and VIP adapters.",
+  "version": "0.1.0"
+}

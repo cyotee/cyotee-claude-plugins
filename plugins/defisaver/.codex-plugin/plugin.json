@@ -1,0 +1,13 @@
+{
+  "name": "defisaver",
+  "version": "0.1.0",
+  "description": "defisaver skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "defisaver",
+    "shortDescription": "defisaver skills",
+    "longDescription": "defisaver skills",
+    "category": "Productivity",
+    "developerName": "cyotee"
+  }
+}

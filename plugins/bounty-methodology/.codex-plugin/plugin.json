@@ -1,0 +1,13 @@
+{
+  "name": "bounty-methodology",
+  "version": "0.1.0",
+  "description": "Cross-cutting Immunefi/contest methodology skills from continuous bounty research: scope discipline, hybrid custody, async vault NAV, credit-account adapters, L2 bridges, CCTP inventory.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "bounty-methodology",
+    "shortDescription": "Cross-cutting Immunefi/contest methodology skills from continuous bounty research: scope discipline, hybrid custody, asy",
+    "longDescription": "Cross-cutting Immunefi/contest methodology skills from continuous bounty research: scope discipline, hybrid custody, async vault NAV, credit-account adapters, L2 bridges, CCTP inventory.",
+    "category": "Productivity",
+    "developerName": "cyotee"
+  }
+}

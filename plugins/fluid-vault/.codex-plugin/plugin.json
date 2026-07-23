@@ -1,0 +1,13 @@
+{
+  "name": "fluid-vault",
+  "version": "0.1.0",
+  "description": "fluid-vault skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "fluid-vault",
+    "shortDescription": "fluid-vault skills",
+    "longDescription": "fluid-vault skills",
+    "category": "Productivity",
+    "developerName": "cyotee"
+  }
+}

@@ -471,6 +471,71 @@
       "author": {
         "name": "cyotee"
       }
+    },
+    {
+      "name": "bounty-methodology",
+      "source": {
+        "source": "local",
+        "path": "./plugins/bounty-methodology"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
+      "description": "Cross-cutting Immunefi/contest methodology + integration skills (scope, custody, async vaults, CCTP, bridges)"
+    },
+    {
+      "name": "0x-settler",
+      "source": {
+        "source": "local",
+        "path": "./plugins/0x-settler"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
+      "description": "0x Settler settlement security and swap integration skills"
+    },
+    {
+      "name": "fluid-vault",
+      "source": {
+        "source": "local",
+        "path": "./plugins/fluid-vault"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
+      "description": "Instadapp Fluid vault/liquidity review skills"
+    },
+    {
+      "name": "defisaver",
+      "source": {
+        "source": "local",
+        "path": "./plugins/defisaver"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
+      "description": "DeFi Saver recipe executor and transient store skills"
+    },
+    {
+      "name": "gearbox",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gearbox"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development",
+      "description": "Gearbox V3 credit-account adapter integration skills"
     }
   ]
 }
