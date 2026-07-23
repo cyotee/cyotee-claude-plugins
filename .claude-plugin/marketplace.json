@@ -436,7 +436,10 @@
     },
     {
       "name": "permit2",
-      "source": "./plugins/permit2",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/permit2-skill"
+      },
       "description": "Progressive disclosure skills for Uniswap Permit2 - signature-based token approvals, AllowanceTransfer, SignatureTransfer, nonce management, and wagmi integration",
       "version": "0.1.0",
       "author": {
@@ -457,7 +460,10 @@
     },
     {
       "name": "tevm",
-      "source": "./plugins/tevm",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/tevm-skill"
+      },
       "description": "Progressive disclosure skills for Tevm - lightweight browser EVM for local testing, contract debugging, account management, and fork testing",
       "version": "0.1.0",
       "author": {
@@ -477,7 +483,10 @@
     },
     {
       "name": "wagmi",
-      "source": "./plugins/wagmi",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/wagmi-skill"
+      },
       "description": "Progressive disclosure skills for wagmi - React and vanilla JS Ethereum hooks for wallet connections, contract reads/writes, transports, and connectors",
       "version": "0.1.0",
       "author": {
@@ -497,7 +506,10 @@
     },
     {
       "name": "chainlink",
-      "source": "./plugins/chainlink",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/chainlink-skill"
+      },
       "description": "Progressive disclosure skills for Chainlink - VRF architecture and local testing with Chainlink Local",
       "version": "0.1.0",
       "author": {
@@ -516,7 +528,10 @@
     },
     {
       "name": "reliquary",
-      "source": "./plugins/reliquary",
+      "source": {
+        "source": "github",
+        "repo": "cyotee/reliquary-skill"
+      },
       "description": "Progressive disclosure skills for Reliquary - maturity-based incentive system with ERC-721 Relic NFTs, level curves, and rolling rewarders",
       "version": "0.1.0",
       "author": {
